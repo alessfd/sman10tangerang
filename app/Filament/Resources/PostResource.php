@@ -68,8 +68,8 @@ class PostResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
+                /*Tables\Columns\TextColumn::make('slug')
+                    ->searchable(),*/
                 Tables\Columns\TextColumn::make('thumbnail')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('active')
