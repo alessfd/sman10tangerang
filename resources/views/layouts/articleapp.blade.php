@@ -35,7 +35,7 @@
     <body class="bg-white font-family-karla">
 
 
-
+        {{$slot}}
 
     </body>
 </x-navbar-footer>

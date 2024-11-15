@@ -24,6 +24,16 @@ class PostController extends Controller
         return view('home', compact('posts'));
     }
 
+    public function article($slug)
+    {
+
+        $post = Post::query()
+            ->where('slug', $slug)
+            ->firstOrFail();
+
+        return view('article', compact('post'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
