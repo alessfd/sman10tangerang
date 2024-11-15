@@ -24,14 +24,20 @@
 
     <x-slot name="page">
         <!-- Posts Section -->
-        <section class="w-full md:w-2/3 flex flex-col items-center px-3">
-            <h1>{{$posts}}</h1>
-            @foreach ($posts as $post)
-                <x-post-item :post="$post"></x-post-item>
-            @endforeach
+        <section class="w-full h-80 flex flex-col items-center px-3" style="height: 70vh;">
+
+
+
+            <div class="grid grid-cols-4 gap-4 m-8 md:m-12">
+                @foreach ($posts->take(4) as $post)
+                    <div>
+                        <x-post-item :post="$post"></x-post-item>
+                    </div>
+                @endforeach
+            </div>
 
             <!-- Pagination -->
-            <div class="flex items-center py-8">
+            <!-- <div class="flex items-center py-8">
                 <a href="#"
                     class="h-10 w-10 bg-blue-800 hover:bg-blue-600 font-semibold text-white text-sm flex items-center justify-center">1</a>
                 <a href="#"
@@ -39,7 +45,7 @@
                 <a href="#"
                     class="h-10 w-10 font-semibold text-gray-800 hover:text-gray-900 text-sm flex items-center justify-center ml-3">Next
                     <i class="fas fa-arrow-right ml-2"></i></a>
-            </div>
+            </div> -->
 
         </section>
 
