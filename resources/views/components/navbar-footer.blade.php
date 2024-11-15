@@ -5,9 +5,9 @@
     <header class="bg-white mb-8">
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
-                <a href="#" class="-m-1.5 p-1.5">
+                <a href="/" class="-m-1.5 p-1.5">
                     <span class="sr-only">Your Company</span>
-                    <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                    <img class="h-8 w-auto" src="favicon.ico" alt="">
                 </a>
             </div>
             <div class="flex lg:hidden mobile-toggle">
@@ -126,7 +126,7 @@
                     </div>
                 </div>
                 <!-- <a href="#" class="text-sm/6 font-semibold text-gray-900">Email</a> -->
-                <a href="#" class="text-sm/6 font-semibold text-gray-900">Berita</a>
+                <a href="/article" class="text-sm/6 font-semibold text-gray-900">Berita</a>
             </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->

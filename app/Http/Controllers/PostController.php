@@ -24,14 +24,29 @@ class PostController extends Controller
         return view('home', compact('posts'));
     }
 
-    public function article($slug)
+    public function articleapp($slug)
     {
 
         $post = Post::query()
+            ->where('active', '=', 1)
+            ->whereDate('published_At', '<=', date('Y-m-d'))
+            ->orderBy('published_at', 'desc')
             ->where('slug', $slug)
             ->firstOrFail();
 
         return view('article', compact('post'));
+    }
+
+    public function article()
+    {
+
+        $posts = Post::query()
+            ->where('active', '=', 1)
+            ->whereDate('published_At', '<=', date('Y-m-d'))
+            ->orderBy('published_at', 'desc')
+            ->paginate();
+
+        return view('article_gallery', compact('posts'));
     }
 
     /**
