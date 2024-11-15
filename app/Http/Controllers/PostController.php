@@ -10,13 +10,16 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() 
+    public function index()
     {
         $posts = Post::query()
         ->where('active', '=', 1)
-        ->whereDate('published_At', '<', date('Y-m-d'))        
+        ->whereDate('published_At', '<=', date('Y-m-d'))
         ->orderBy('published_at', 'desc')
         ->paginate();
+
+
+
 
         return view('home', compact('posts'));
     }

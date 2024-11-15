@@ -53,7 +53,10 @@ class PostResource extends Resource
                 ])->columnSpan(8),
             Forms\Components\Section::make()
                 ->schema([
-                    Forms\Components\FileUpload::make('thumbnail'),
+                    Forms\Components\FileUpload::make('thumbnail')
+                        ->image()
+                        ->disk('public')
+                        ->directory('thumbnail'),
                     Forms\Components\Select::make('categories')
                         ->multiple()
                         ->relationship('categories', 'title')
@@ -68,9 +71,7 @@ class PostResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                /*Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),*/
-                Tables\Columns\TextColumn::make('thumbnail')
+                Tables\Columns\ImageColumn::make('thumbnail')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('active')
                     ->boolean(),
