@@ -45,7 +45,9 @@ class PostResource extends Resource
 
                     Forms\Components\RichEditor::make('body')
                         ->required()
-                        ->columnSpanFull(),
+                        ->columnSpanFull()
+                        ->fileAttachmentsDisk('public')
+                        ->fileAttachmentsDirectory('blogasset'),
                     Forms\Components\Toggle::make('active')
                         ->required(),
                     Forms\Components\DateTimePicker::make('published_at')
