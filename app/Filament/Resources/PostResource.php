@@ -13,6 +13,8 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use AmidEsfahani\FilamentTinyEditor\TinyEditor;
+
 use Str;
 
 class PostResource extends Resource
@@ -45,11 +47,13 @@ class PostResource extends Resource
                                 ->maxLength(2048),
                         ]),
 
-                    Forms\Components\RichEditor::make('body')
-                        ->required()
-                        ->columnSpanFull()
-                        ->fileAttachmentsDisk('public')
-                        ->fileAttachmentsDirectory('blogasset'),
+                TinyEditor::make('body')
+                    ->fileAttachmentsDisk('public')
+                    ->fileAttachmentsDirectory('blogasset')
+                    ->ltr()
+                    ->resize('both')
+                    ->columnSpan('full')
+                    ->required(),
                     Forms\Components\Toggle::make('active')
                         ->required(),
                     Forms\Components\DateTimePicker::make('published_at')

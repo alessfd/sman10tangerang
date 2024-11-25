@@ -1,4 +1,11 @@
 <?php return array (
+  'amidesfahani/filament-tinyeditor' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'AmidEsfahani\\FilamentTinyEditor\\TinyeditorServiceProvider',
+    ),
+  ),
   'anourvalar/eloquent-serialize' => 
   array (
     'aliases' => 
