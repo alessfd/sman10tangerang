@@ -6,13 +6,6 @@
       'EloquentSerialize' => 'AnourValar\\EloquentSerialize\\Facades\\EloquentSerializeFacade',
     ),
   ),
-  'awcodes/filament-tiptap-editor' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'FilamentTiptapEditor\\FilamentTiptapEditorServiceProvider',
-    ),
-  ),
   'blade-ui-kit/blade-heroicons' => 
   array (
     'providers' => 

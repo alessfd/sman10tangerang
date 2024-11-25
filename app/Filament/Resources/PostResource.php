@@ -13,11 +13,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use FilamentTiptapEditor\TiptapEditor;
-
-use Filament\Forms\Components\RichEditor;
-
-
 use Str;
 
 class PostResource extends Resource
@@ -49,10 +44,12 @@ class PostResource extends Resource
                                 ->required()
                                 ->maxLength(2048),
                         ]),
-                    RichEditor::make('content'),
-                    // TiptapEditor::make('body')
-                    //     ->profile('simple')
-                    //     ->required(),
+
+                    Forms\Components\RichEditor::make('body')
+                        ->required()
+                        ->columnSpanFull()
+                        ->fileAttachmentsDisk('public')
+                        ->fileAttachmentsDirectory('blogasset'),
                     Forms\Components\Toggle::make('active')
                         ->required(),
                     Forms\Components\DateTimePicker::make('published_at')
@@ -62,11 +59,6 @@ class PostResource extends Resource
                 ->schema([
                     Forms\Components\FileUpload::make('thumbnail')
                         ->image()
-                        ->imageEditor()
-                        ->imageEditorMode(2)
-                        ->imageEditorAspectRatios([
-                            '16:9',
-                        ])
                         ->disk('public')
                         ->directory('thumbnail'),
                     Forms\Components\Select::make('categories')
