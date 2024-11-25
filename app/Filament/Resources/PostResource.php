@@ -23,6 +23,7 @@ class PostResource extends Resource
 
     protected static ?string $navigationGroup = 'Content';
 
+
     public static function form(Form $form): Form
     {
         return $form
