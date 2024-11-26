@@ -100,28 +100,13 @@
                                     </svg>
                                 </div>
                                 <div class="flex-auto">
-                                    <a href="https://www.instagram.com/sman10_tangsel/" class="block font-semibold text-gray-900">
+                                    <a href="https://msha.ke/sman10kotatangerang?fbclid=PAZXh0bgNhZW0CMTEAAabYXd7F0FQh7J6ZMmGbeCCAXvt3O_q7vckJ55OQlnEmkjeeQJBtNR7wuLk_aem_3cicMyzU6hObm3fGMYm-xQ" class="block font-semibold text-gray-900">
                                         Instagram
                                         <span class="absolute inset-0"></span>
                                     </a>
-                                    <p class="mt-1 text-gray-600">Instagram Sekolah</p>
+                                    <p class="mt-1 text-gray-600">Link Tree</p>
                                 </div>
                             </div>
-                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
-                                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                    <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
-                                    </svg>
-                                </div>
-                                <div class="flex-auto">
-                                    <a href="https://www.instagram.com/osis10nextsofficial_/" class="block font-semibold text-gray-900">
-                                        Instagram
-                                        <span class="absolute inset-0"></span>
-                                    </a>
-                                    <p class="mt-1 text-gray-600">Instagram Osis</p>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>

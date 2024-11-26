@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sman10tanggerang', function (Blueprint $table) {
+        Schema::create('alumni_years', function (Blueprint $table) {
             $table->id();
+            $table->timestamps("year");
             $table->timestamps();
         });
     }
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sman10tanggerang');
+        Schema::dropIfExists('alumni_years');
     }
 };
