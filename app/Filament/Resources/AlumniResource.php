@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -24,12 +25,19 @@ class AlumniResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('nama')
+                Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('angkatan')
+                Forms\Components\Select::make('angkatan')
                     ->required()
-                    ->numeric(),
+                    ->relationship("alumni_years", "year"),
+                Forms\Components\Section::make()
+                    ->schema([
+                        Forms\Components\FileUpload::make('photo')
+                            ->image()
+                            ->disk('public')
+                            ->directory('alumnigallery'),
+                    ])
             ]);
     }
 
@@ -37,11 +45,12 @@ class AlumniResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama')
+                Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('angkatan')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('alumni_years.year')
                     ->sortable(),
+                Tables\Columns\ImageColumn::make('photo')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -52,7 +61,8 @@ class AlumniResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make("Angkatan")
+                    -> relationship('alumni_years', 'year'),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
