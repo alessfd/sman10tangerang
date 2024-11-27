@@ -47,7 +47,7 @@
                                     <x-heroicon-o-magnifying-glass class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" />
                                 </div>
                                 <div class="flex-auto">
-                                    <a href="#" class="block font-semibold text-gray-900">
+                                    <a href="visi-misi" class="block font-semibold text-gray-900">
                                         Visi Misi
                                         <span class="absolute inset-0"></span>
                                     </a>
