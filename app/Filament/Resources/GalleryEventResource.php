@@ -20,7 +20,7 @@ class GalleryEventResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = "Gallery";
+    protected static ?string $navigationGroup = "Gallery Alumni";
 
     protected static ?int $navigationSort = 6;
 
