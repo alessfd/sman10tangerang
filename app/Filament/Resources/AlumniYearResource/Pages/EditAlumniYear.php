@@ -4,16 +4,17 @@ namespace App\Filament\Resources\AlumniYearResource\Pages;
 
 use App\Filament\Resources\AlumniYearResource;
 use Filament\Actions;
-use Filament\Resources\Pages\ManageRecords;
+use Filament\Resources\Pages\EditRecord;
 
-class ManageAlumniYears extends ManageRecords
+class EditAlumniYear extends EditRecord
 {
     protected static string $resource = AlumniYearResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\ViewAction::make(),
+            Actions\DeleteAction::make(),
         ];
     }
 }

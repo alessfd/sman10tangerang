@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\AlumniResource\RelationManagers\AlumnisRelationManager;
 use App\Filament\Resources\AlumniYearResource\Pages;
 use App\Filament\Resources\AlumniYearResource\RelationManagers;
 use App\Models\AlumniYear;
@@ -64,10 +65,20 @@ class AlumniYearResource extends Resource
             ]);
     }
 
+    public static function getRelations(): array
+    {
+        return [
+            AlumnisRelationManager::class
+        ];
+    }
+
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageAlumniYears::route('/'),
+            'index' => Pages\ListAlumniYears::route('/'),
+            'create' => Pages\CreateAlumniYear::route('/create'),
+            'view' => Pages\ViewAlumniYear::route('/{record}'),
+            'edit' => Pages\EditAlumniYear::route('/{record}/edit'),
         ];
     }
 }

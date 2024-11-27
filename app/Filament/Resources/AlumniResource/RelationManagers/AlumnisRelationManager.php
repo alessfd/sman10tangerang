@@ -1,36 +1,33 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Resources\AlumniResource\RelationManagers;
 
-use App\Filament\Resources\AlumniResource\Pages;
-use App\Filament\Resources\AlumniResource\RelationManagers;
-use App\Models\Alumni;
+
+use Filament\Actions\CreateAction;
+use Filament\Actions\DeleteAction;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
+use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class AlumniResource extends Resource
+class AlumnisRelationManager extends RelationManager
 {
-    protected static ?string $model = Alumni::class;
-    protected static ?int $navigationSort = 4;
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Gallery';
+    protected static string $relationship = 'alumnis';
 
-    public static function form(Form $form): Form
+    public function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Select::make('angkatan')
-                    ->required()
-                    ->relationship("alumni_years", "year"),
+                // Forms\Components\Select::make('angkatan')
+                //     ->required()
+                //     ->relationship("alumni_years", "year"),
                 Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\FileUpload::make('photo')
@@ -41,7 +38,7 @@ class AlumniResource extends Resource
             ]);
     }
 
-    public static function table(Table $table): Table
+    public function table(Table $table): Table
     {
         return $table
             ->columns([
@@ -62,8 +59,10 @@ class AlumniResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                SelectFilter::make("Angkatan")
-                    -> relationship('alumni_years', 'year'),
+
+            ])
+            ->headerActions([
+                Tables\Actions\CreateAction::make(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -76,20 +75,12 @@ class AlumniResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
+
+    protected function getHeaderActions(): array
     {
         return [
-            //
+            CreateAction::make(),
         ];
     }
 
-    public static function getPages(): array
-    {
-        return [
-            'index' => Pages\ListAlumnis::route('/'),
-            'create' => Pages\CreateAlumni::route('/create'),
-            'view' => Pages\ViewAlumni::route('/{record}'),
-            'edit' => Pages\EditAlumni::route('/{record}/edit'),
-        ];
-    }
 }
