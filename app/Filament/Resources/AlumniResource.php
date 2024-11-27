@@ -48,6 +48,7 @@ class AlumniResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('alumni_years.year')
+                    ->label("Angkatan")
                     ->sortable(),
                 Tables\Columns\ImageColumn::make('photo')
                     ->searchable(),
