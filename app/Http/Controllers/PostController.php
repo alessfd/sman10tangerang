@@ -17,10 +17,7 @@ class PostController extends Controller
         ->whereDate('published_At', '<=', date('Y-m-d'))
         ->orderBy('published_at', 'desc')
         ->paginate();
-
-
-
-
+        
         return view('home', compact('posts'));
     }
 
