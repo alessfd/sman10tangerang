@@ -35,7 +35,8 @@ class GalleryEventResource extends Resource
                         ->multiple()
                         ->disk('public')
                         ->reorderable()
-                        ->directory('alumnievent'),
+                        ->directory('alumnievent')
+                        ->imageEditor(),
 
                     Forms\Components\TextArea::make('description')
                         ->required()

@@ -36,6 +36,7 @@ class AlumniResource extends Resource
                         Forms\Components\FileUpload::make('photo')
                             ->image()
                             ->disk('public')
+                            ->imageEditor()
                             ->directory('alumnigallery'),
                     ])
             ]);

@@ -64,7 +64,8 @@ class PostResource extends Resource
                     Forms\Components\FileUpload::make('thumbnail')
                         ->image()
                         ->disk('public')
-                        ->directory('thumbnail'),
+                        ->directory('thumbnail')
+                        ->imageEditor(),
                     Forms\Components\Select::make('categories')
                         ->multiple()
                         ->relationship('categories', 'title')

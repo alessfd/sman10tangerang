@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
@@ -20,6 +21,24 @@ class Post extends Model
         'user_id',
     ];
 
+    protected static function booted()
+    {
+        static::deleting(function ($post) {
+            if ($post->thumbnail) {
+                Storage::disk('public')->delete($post->thumbnail);
+            }
+        });
+
+
+        static::updating(function ($post) {
+            if ($post->isDirty('thumbnail')) {
+                $oldthumbnail = $post->getOriginal('thumbnail');
+                if ($oldthumbnail) {
+                    Storage::disk('public')->delete($oldthumbnail);
+                }
+            }
+        });
+    }
 
     public function user(): BelongsTo
     {
