@@ -21,6 +21,11 @@ class PostController extends Controller
         return view('home', compact('posts'));
     }
 
+    public function visiMisi()
+    {
+        return view('visi-misi'); // Return the Visi Misi view
+    }
+
     public function articleapp($slug)
     {
 
