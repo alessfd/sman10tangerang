@@ -16,4 +16,9 @@ class SchoolProfile extends Model
         'phone_number',
         'description',
     ];
+
+    protected $casts = [
+        'visi' => 'array',
+        'misi' => 'array'
+    ];
 }

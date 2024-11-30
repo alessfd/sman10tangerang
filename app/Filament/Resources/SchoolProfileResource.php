@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Support\Enums\Alignment;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -48,14 +49,31 @@ class SchoolProfileResource extends Resource
                 -> prefix('+62')
                 -> maxlength(11)
                 ->required(),
-                Forms\Components\TextArea::make('visi')
-                ->required()
-                ->autosize()
-                ->maxLength(2074),
-                Forms\Components\TextArea::make('misi')
-                ->required()
-                ->autosize()
-                ->maxLength(2074),
+                Forms\Components\Repeater::make('visi')
+                    ->simple(
+                        Forms\Components\TextInput::make('value')
+                            ->label('Visi')
+                            ->required()
+                            ->maxLength(2074),
+                    )
+                ->columnSpanFull()
+                ->collapsed()
+                ->minItems(1)
+                ->reorderableWithButtons()
+                ->addActionLabel('Tambah Visi')
+                ->addActionAlignment(Alignment::Start),
+                Forms\Components\Repeater::make("misi")
+                    ->simple(
+
+                            Forms\Components\TextInput::make('value')
+                            ->required()
+                            ->maxLength(2074),
+                    )
+                    ->collapsed()
+                    ->minItems(1)
+                    ->reorderableWithButtons()
+                    ->addActionLabel('Tambah Misi')
+                    ->addActionAlignment(Alignment::Start),
                 Forms\Components\TextArea::make('address')
                 ->required()
                 ->autosize()

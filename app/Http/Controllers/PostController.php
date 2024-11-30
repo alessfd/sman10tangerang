@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\post;
+use App\Models\SchoolProfile;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -23,7 +24,10 @@ class PostController extends Controller
 
     public function visiMisi()
     {
-        return view('visi-misi'); // Return the Visi Misi view
+        $profiles = SchoolProfile::query()
+            ->first();
+
+        return view('visi-misi', compact('profiles')); // Return the Visi Misi view
     }
 
     public function articleapp($slug)
@@ -52,11 +56,6 @@ class PostController extends Controller
     }
 
 
-    public function VisiMisi()
-    {
-
-        return view('article_gallery', compact('posts'));
-    }
 
     /**
      * Show the form for creating a new resource.
