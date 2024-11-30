@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('school_profiles', function (Blueprint $table) {
             $table->id();
-            $table->string("visi", 300);
-            $table->string("misi", 300);
+            $table->string("visi", 2074);
+            $table->string("misi", 2074);
             $table->string("name", 40);
             $table->integer("npsn");
-            $table->string("address", 30);
+            $table->string("address", 2074);
             $table->string("email", 30);
             $table->integer("phone_number");
-            $table->string("description", 100);
+            $table->string("description", 2074);
             $table->timestamps();
         });
     }

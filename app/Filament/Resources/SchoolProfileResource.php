@@ -48,18 +48,22 @@ class SchoolProfileResource extends Resource
                 -> prefix('+62')
                 -> maxlength(11)
                 ->required(),
-                Forms\Components\TextInput::make('visi')
+                Forms\Components\TextArea::make('visi')
                 ->required()
-                ->maxLength(300),
-                Forms\Components\TextInput::make('misi')
+                ->autosize()
+                ->maxLength(2074),
+                Forms\Components\TextArea::make('misi')
                 ->required()
-                ->maxLength(300),
-                Forms\Components\TextInput::make('address')
+                ->autosize()
+                ->maxLength(2074),
+                Forms\Components\TextArea::make('address')
                 ->required()
-                ->maxLength(30),
-                Forms\Components\TextInput::make('description')
+                ->autosize()
+                ->maxLength(2074),
+                Forms\Components\TextArea::make('description')
                 ->required()
-                ->maxLength(100),
+                ->autosize()
+                ->maxLength(2074),
             ])
 
             ]);
