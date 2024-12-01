@@ -17,7 +17,7 @@ class AlumniYear extends Model
 
     public function gallery_events(): BelongsToMany
     {
-        return $this->belongsToMany(Alumni::class);
+        return $this->belongsToMany(GalleryEvent::class);
     }
 
 }

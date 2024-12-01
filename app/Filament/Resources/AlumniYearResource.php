@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\AlumniResource\RelationManagers\AlumnisRelationManager;
 use App\Filament\Resources\AlumniYearResource\Pages;
 use App\Filament\Resources\AlumniYearResource\RelationManagers;
+use App\Filament\Resources\GalleryEventResource\RelationManagers\EventRelationManager;
 use App\Models\AlumniYear;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -68,7 +69,8 @@ class AlumniYearResource extends Resource
     public static function getRelations(): array
     {
         return [
-            AlumnisRelationManager::class
+            AlumnisRelationManager::class,
+            EventRelationManager::class
         ];
     }
 

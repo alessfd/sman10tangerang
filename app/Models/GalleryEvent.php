@@ -29,14 +29,21 @@ class GalleryEvent extends Model
 
 
         static::updating(function ($galleryEvent) {
+
             if ($galleryEvent->isDirty('images')) {
-                $oldimages = $galleryEvent->getOriginal('images');
-                if ($oldimages) {
-                    Storage::disk('public')->delete($oldimages);
+                $oldPictures = $galleryEvent->getOriginal('images');
+                $newPictures = $galleryEvent->images;
+
+                $removedPictures = array_diff($oldPictures ?? [], $newPictures ?? []);
+
+                foreach ($removedPictures as $filePath) {
+                    Storage::disk('public')->delete($filePath);
                 }
             }
         });
     }
+
+
 
     public function alumni_years():BelongsToMany
     {
