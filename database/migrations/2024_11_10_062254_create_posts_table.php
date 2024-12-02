@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('thumbnail', 2048)->nullable();
             $table->longText('body');
             $table->boolean('active');
-            $table->datetime('published_at');
+            $table->timestamp('published_at') -> useCurrent();
             $table->foreignIdFor(\App\Models\User::class, 'user_id');
             $table->timestamps();
         });
