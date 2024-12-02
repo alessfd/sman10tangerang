@@ -1,0 +1,12 @@
+.no-scroll{
+    overflow: hidden;
+}
+
+#image-carousel{
+    z-index: 2;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
