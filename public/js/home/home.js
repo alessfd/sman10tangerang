@@ -28,8 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdownButton = document.querySelector('.relative > button'); // Tombol untuk membuka dropdown
     const dropdownMenu = document.querySelector('.absolute'); // Menu dropdown
     const mobileNavMenu = document.querySelector('.mobile-nav');
-
-
     const dropdownSocialButton = document.querySelector('.social-dropdown > button'); // Tombol untuk membuka dropdown
     const  dropdownSocialMenu  = document.querySelector('.social-dropdown .absolute'); // Menu dropdown
 
@@ -80,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     dropdownSocialMenu.addEventListener('mouseover', showDropdownSocialMenu);
     dropdownSocialMenu.addEventListener('mouseleave', hideDropdownSocialMenu);
-
 
     closeButton.addEventListener('click', () => {
         event.stopPropagation();
