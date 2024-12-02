@@ -21,6 +21,8 @@ class LectureProfileResource extends Resource
 
     protected static ?string $navigationGroup = 'Profile';
 
+    protected static ?string $navigationLabel = "Teacher Profile";
+
     public static function form(Form $form): Form
     {
         return $form

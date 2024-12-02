@@ -37,7 +37,6 @@ class Post extends Model
         static::updating(function ($post) {
             if ($post->isDirty('thumbnail')) {
                 $oldthumbnail = $post->getOriginal('thumbnail');
-                dump($oldthumbnail);
                 if ($oldthumbnail) {
                     Storage::disk('public')->delete($oldthumbnail);
                 }

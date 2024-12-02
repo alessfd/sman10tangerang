@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\post;
 use App\Models\SchoolProfile;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -40,7 +41,10 @@ class PostController extends Controller
             ->where('slug', $slug)
             ->firstOrFail();
 
-        return view('article', compact('post'));
+
+        $datetime = Carbon::parse($post->published_at)->translatedFormat('l, j F Y - H:i');
+
+        return view('article', compact('post','datetime'));
     }
 
     public function article()
