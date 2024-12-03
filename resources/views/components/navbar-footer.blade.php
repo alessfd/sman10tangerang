@@ -168,7 +168,7 @@
                     <a href="#" class="hover:underline mx-2 me-4 md:me-6">About</a>
                 </li>
                 <li>
-                    <a href="#" class="mx-2 hover:underline">Contact</a>
+                    <a href="/contact" class="mx-2 hover:underline">Contact</a>
                 </li>
             </ul>
         </div>
