@@ -16,6 +16,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+
+
+
 class AlumniResource extends Resource
 {
     protected static ?string $model = Alumni::class;
@@ -40,7 +43,7 @@ class AlumniResource extends Resource
                             ->disk('public')
                             ->imageEditor()
                             ->directory('alumnigallery'),
-                    ])
+                    ]),
             ]);
     }
 
@@ -96,12 +99,4 @@ class AlumniResource extends Resource
         ];
     }
 
-
-    protected function getHeaderActions(): array
-{
-    return [
-        Action::make('edit'),
-        Action::make('delete'),
-    ];
-}
 }

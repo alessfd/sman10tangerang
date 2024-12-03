@@ -20,4 +20,10 @@ class AlumniYear extends Model
         return $this->belongsToMany(GalleryEvent::class);
     }
 
+
+    private $year;
+
+    public function getYear() {
+        return $this->attributes['year'];
+    }
 }
