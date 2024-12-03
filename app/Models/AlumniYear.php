@@ -10,6 +10,13 @@ class AlumniYear extends Model
 {
     protected $fillable = ['year'];
 
+    protected static function booted()
+    {
+        static::deleting(function ($parent) {
+            $parent->alumnis()->delete();
+        });
+    }
+
     public function alumnis(): BelongsToMany
     {
         return $this->belongsToMany(Alumni::class);
