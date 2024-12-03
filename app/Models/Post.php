@@ -63,7 +63,13 @@ class Post extends Model
 
     public function getFormattedDate()
     {
-        return Carbon::parse($this->published_at)->format('d M Y');
+        return Carbon::parse($this->published_at)->translatedFormat('l, j F Y - H:i');
+        /*tambahkan , h:i A ke dalam format jika ingin ditampilkan waktunya */
+    }
+
+    public function getSimpleFormattedDate()
+    {
+        return Carbon::parse($this->published_at)->translatedFormat('j F Y');
         /*tambahkan , h:i A ke dalam format jika ingin ditampilkan waktunya */
     }
 

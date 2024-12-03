@@ -42,9 +42,8 @@ class PostController extends Controller
             ->firstOrFail();
 
 
-        $datetime = Carbon::parse($post->published_at)->translatedFormat('l, j F Y - H:i');
 
-        return view('article', compact('post','datetime'));
+        return view('article', compact('post'));
     }
 
     public function article()
