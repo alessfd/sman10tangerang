@@ -69,7 +69,7 @@ class LectureImport implements ToModel, PersistRelations, WithHeadingRow, WithSk
                 if ($sheet->getCell($checkcell)->getValue() === $row['name']) {
                     $imageContents = file_get_contents($drawing->getPath());
                     $filename = uniqid() . '.' . pathinfo($drawing->getPath(), PATHINFO_EXTENSION);
-                    $imagePath = 'alumnigallery/' . $filename;
+                    $imagePath = 'photolecture/' . $filename;
 
                     // Simpan gambar ke storage
                     Storage::disk('public')->put($imagePath, $imageContents);
