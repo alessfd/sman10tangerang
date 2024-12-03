@@ -2,17 +2,22 @@
 
 namespace App\Imports;
 
-use App\Models\Alumni;
-use App\Models\AlumniYear;
+use App\Models\LectureProfile;
+use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Concerns\PersistRelations;
-use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithSkipDuplicates;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
-class AlumniImport implements ToModel, PersistRelations, WithHeadingRow, WithSkipDuplicates
+class LectureImport implements ToModel, PersistRelations, WithHeadingRow, WithSkipDuplicates
 {
+    /**
+    * @param array $row
+    *
+    * @return \Illuminate\Database\Eloquent\Model|null
+    */
+
     protected $filePath;
 
     public function __construct($filePath)
@@ -20,42 +25,31 @@ class AlumniImport implements ToModel, PersistRelations, WithHeadingRow, WithSki
         $this->filePath = $filePath;
     }
 
-    /**
-    * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
+
+
     public function model(array $row)
     {
-        // Ambil atau buat tahun alumni
-        $alumniYear = AlumniYear::firstOrCreate(
-            ['year' => $row['angkatan']],
-            ['year' => $row['angkatan']]
-        );
 
-        // Simpan gambar dari Excel jika ada
-        $photoPath = $this->extractPhoto($row);
 
-        // Simpan data alumni
-        $alumni = new Alumni([
-            'name' => $row["name"],
-            'photo' => $photoPath,
+         $photoPath = $this->extractPhoto($row);
+
+
+        $lecture =  new LectureProfile([
+              'name' => $row["name"],
+                'photo' => $photoPath,
+                'email' => $row["email"] ?? null,
+                'phone_number' => $row["phonenumber"] ?? null,
+                'address' => $row['alamat'] ?? null,
+                'gender' => $row['gender'] ?? null,
+                'dob' => $row['birthdate'] ?? null,
+                'jabatan' => $row['jabatan'] ??null,
         ]);
 
-        $alumni->save();
+        $lecture ->save();
 
-        // Kaitkan alumni dengan tahun
-        $alumni->alumni_years()->attach($alumniYear->id);
-
-        return $alumni;
+        return $lecture;
     }
 
-    /**
-     * Extract photo from Excel and save it to storage.
-     *
-     * @param array $row
-     * @return string|null
-     */
     protected function extractPhoto(array $row)
     {
         $filePath = 'D:/GIT/sman10tangerang/storage/app/private/'. $this -> filePath;
