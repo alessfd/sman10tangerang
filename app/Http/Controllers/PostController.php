@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\post;
 use App\Models\SchoolProfile;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -39,6 +40,8 @@ class PostController extends Controller
             ->orderBy('published_at', 'desc')
             ->where('slug', $slug)
             ->firstOrFail();
+
+
 
         return view('article', compact('post'));
     }

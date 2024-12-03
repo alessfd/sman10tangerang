@@ -20,7 +20,7 @@
         <p href="/article/{{ $post->slug }}" class="text-sm pb-3">
             By <a href="/article/{{ $post->slug }}"
                 class="font-semibold hover:text-gray-800">{{ $post->user->name }}</a>,
-            Published on {{ $post->getFormattedDate() }}
+            Published on {{ $post->getSimpleFormattedDate() }}
         </p>
         <!-- <a href="/article/{{ $post->slug }}" class="pb-6">
                         {{ $post->shortBody() }}

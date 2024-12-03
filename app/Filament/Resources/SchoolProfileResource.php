@@ -23,6 +23,8 @@ class SchoolProfileResource extends Resource
 
     protected static ?string $navigationGroup = 'Profile';
 
+    protected static ?string $navigationLabel = "School Information";
+
     public static function canCreate(): bool
     {
         return false;

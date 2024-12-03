@@ -37,4 +37,6 @@ class Alumni extends Model
             }
         });
     }
+
+
 }
