@@ -18,16 +18,22 @@ class PostController extends Controller
         ->whereDate('published_At', '<=', date('Y-m-d'))
         ->orderBy('published_at', 'desc')
         ->paginate();
-
+        
         return view('home', compact('posts'));
     }
-
+    
     public function visiMisi()
     {
         $profiles = SchoolProfile::query()
-            ->first();
-
+        ->first();
+        
         return view('visi-misi', compact('profiles')); // Return the Visi Misi view
+    }
+   
+    public function contact()
+    {
+        // Return the 'contact' view
+        return view('contact');  // Assumes there's a contact.blade.php in resources/views
     }
 
     public function articleapp($slug)
