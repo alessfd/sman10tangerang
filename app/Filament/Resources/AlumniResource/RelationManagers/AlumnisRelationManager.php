@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\AlumniResource\RelationManagers;
 
-
 use App\Imports\AlumniRelationImport;
 use App\Models\AlumniYear;
 use Filament\Tables\Actions\Action;
@@ -97,7 +96,7 @@ class AlumnisRelationManager extends RelationManager
                     //     dump('No alumni year found');
                     // }
                     // Proses impor menggunakan Laravel Excel
-                    Excel::import(new AlumniRelationImport($year) , $filePath);
+                    Excel::import(new AlumniRelationImport($filePath,$year) , $filePath);
 
                     // Hapus file setelah impor selesai
                     FacadesStorage::disk('local')->delete($filePath);

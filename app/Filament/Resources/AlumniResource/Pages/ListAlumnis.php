@@ -46,7 +46,7 @@ class ListAlumnis extends ListRecords
                 //   dd($filePath);
 
                   // Proses impor menggunakan Laravel Excel
-                  Excel::import(new AlumniImport, $filePath);
+                  Excel::import(new AlumniImport($filePath), $filePath);
 
                   // Hapus file setelah impor selesai
                   FacadesStorage::disk('local')->delete($filePath);

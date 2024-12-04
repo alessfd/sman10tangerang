@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "10dfcf6ecd947924f41fa2b4313625fa",
+    "content-hash": "fce081d98d43f2a5b01327c02396df1a",
     "packages": [
         {
             "name": "amidesfahani/filament-tinyeditor",

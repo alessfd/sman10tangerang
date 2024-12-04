@@ -10,6 +10,7 @@ Route::get( '/alumni', [\App\Http\Controllers\PostController::class, 'alumni'])-
 
 
 Route::get('/visi-misi', [\App\Http\Controllers\PostController::class, 'visiMisi'])->name('visimisi');
+Route::get('/contact', [\App\Http\Controllers\PostController::class, 'contact'])->name('contact');
 
 
 

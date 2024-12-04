@@ -2,64 +2,54 @@
 
 namespace App\Imports;
 
-use App\Models\Alumni;
-use App\Models\AlumniYear;
+use App\Models\LectureProfile;
+use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Concerns\PersistRelations;
-use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithSkipDuplicates;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
-class AlumniRelationImport implements ToModel, PersistRelations, WithHeadingRow, WithSkipDuplicates
+class LectureImport implements ToModel, PersistRelations, WithHeadingRow, WithSkipDuplicates
 {
-    protected $filePath;
-    protected $year;
-
-
-    public function __construct($filePath, $year)
-    {
-        $this->filePath = $filePath;
-        $this->year = $year;
-    }
-
     /**
     * @param array $row
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
-    public function model(array $row)
+
+    protected $filePath;
+
+    public function __construct($filePath)
     {
-        // Ambil atau buat tahun alumni
-        $alumniYear = AlumniYear::firstOrCreate(
-            ['year' => $this->year],
-            ['year' => $this->year]
-        );
-
-        // Simpan gambar dari Excel jika ada
-        $photoPath = $this->extractPhoto($row);
-
-        // Simpan data alumni
-        $alumni = new Alumni([
-            'name' => $row["name"],
-            'alumni_year_id' => $alumniYear->id,
-            'photo' => $photoPath,
-        ]);
-
-        $alumni->save();
-
-        // Kaitkan alumni dengan tahun
-        $alumni->alumni_years()->attach($alumniYear->id);
-
-        return $alumni;
+        $this->filePath = $filePath;
     }
 
-    /**
-     * Extract photo from Excel and save it to storage.
-     *
-     * @param array $row
-     * @return string|null
-     */
+
+
+    public function model(array $row)
+    {
+
+
+         $photoPath = $this->extractPhoto($row);
+
+
+        $lecture =  new LectureProfile([
+              'name' => $row["name"],
+                'photo' => $photoPath,
+                'email' => $row["email"] ?? null,
+                'phone_number' => $row["phonenumber"] ?? null,
+                'address' => $row['alamat'] ?? null,
+                'gender' => $row['gender'] ?? null,
+                'dob' => $row['birthdate'] ?? null,
+                'jabatan' => $row['jabatan'] ??null,
+        ]);
+
+        $lecture ->save();
+
+        return $lecture;
+    }
+
     protected function extractPhoto(array $row)
     {
         $filePath = 'D:/GIT/sman10tangerang/storage/app/private/'. $this -> filePath;
@@ -79,7 +69,7 @@ class AlumniRelationImport implements ToModel, PersistRelations, WithHeadingRow,
                 if ($sheet->getCell($checkcell)->getValue() === $row['name']) {
                     $imageContents = file_get_contents($drawing->getPath());
                     $filename = uniqid() . '.' . pathinfo($drawing->getPath(), PATHINFO_EXTENSION);
-                    $imagePath = 'alumnigallery/' . $filename;
+                    $imagePath = 'photolecture/' . $filename;
 
                     // Simpan gambar ke storage
                     Storage::disk('public')->put($imagePath, $imageContents);

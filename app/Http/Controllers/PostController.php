@@ -22,29 +22,43 @@ class PostController extends Controller
         ->whereDate('published_At', '<=', date('Y-m-d'))
         ->orderBy('published_at', 'desc')
         ->paginate();
-
+        
         return view('home', compact('posts'));
     }
-
+    
     public function visiMisi()
     {
         $profiles = SchoolProfile::query()
-            ->first();
-
+        ->first();
+        
         return view('visi-misi', compact('profiles')); // Return the Visi Misi view
+    }
+   
+    public function contact()
+    {
+        // Return the 'contact' view
+        return view('contact');  // Assumes there's a contact.blade.php in resources/views
     }
 
     public function articleapp($slug)
     {
-
         $post = Post::query()
             ->where('active', '=', 1)
-            ->whereDate('published_At', '<=', date('Y-m-d'))
-            ->orderBy('published_at', 'desc')
+            ->whereDate('published_at', '<=', date('Y-m-d'))
             ->where('slug', $slug)
             ->firstOrFail();
-        return view('article', compact('post'));
+    
+        $otherArticles = Post::query()
+            ->where('active', '=', 1)
+            ->whereDate('published_at', '<=', date('Y-m-d'))
+            ->where('slug', '!=', $slug) // Exclude the current article
+            ->orderBy('published_at', 'desc') // Order by published_at
+            ->limit(5) // Limit to 5 articles
+            ->get();
+    
+        return view('article', compact('post', 'otherArticles'));
     }
+    
 
     public function article()
     {
