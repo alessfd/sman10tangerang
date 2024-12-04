@@ -6,7 +6,7 @@
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
                 <a href="/" class="-m-1.5 p-1.5">
-                    <span class="sr-only">Your Company</span>
+                    <span class="sr-only">SMAN 10 Kota Tangerang</span>
                     <img class="h-8 w-auto" src="/favicon.ico" alt="">
                 </a>
             </div>
@@ -59,7 +59,7 @@
                                     <x-heroicon-o-user class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" />
                                 </div>
                                 <div class="flex-auto">
-                                    <a href="#" class="block font-semibold text-gray-900">
+                                    <a href="/alumni" class="block font-semibold text-gray-900">
                                         Alumni
                                         <span class="absolute inset-0"></span>
                                     </a>
@@ -141,7 +141,7 @@
                                 <div class="mt-2 space-y-2 hidden" id="disclosure-1">
                                     <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Profil</a>
                                     <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Visi Misi</a>
-                                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Alumni</a>
+                                    <a href="/alumni" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Alumni</a>
                                     <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Fasilitas</a>
                                 </div>
                             </div>
@@ -161,7 +161,7 @@
 
     <footer class="w-full bg-white shadow  dark:bg-gray-800">
         <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 OSIS SMAN 10 Tanggerang
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 OSIS SMAN 10 Tangerang
             </span>
             <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
                 <li>

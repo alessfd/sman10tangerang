@@ -39,10 +39,4 @@
 
     </body>
 </x-navbar-footer>
-
-
-
-
-
-
 </html>
