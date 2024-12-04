@@ -33,18 +33,23 @@ class PostController extends Controller
 
     public function articleapp($slug)
     {
-
         $post = Post::query()
             ->where('active', '=', 1)
-            ->whereDate('published_At', '<=', date('Y-m-d'))
-            ->orderBy('published_at', 'desc')
+            ->whereDate('published_at', '<=', date('Y-m-d'))
             ->where('slug', $slug)
             ->firstOrFail();
-
-
-
-        return view('article', compact('post'));
+    
+        $otherArticles = Post::query()
+            ->where('active', '=', 1)
+            ->whereDate('published_at', '<=', date('Y-m-d'))
+            ->where('slug', '!=', $slug) // Exclude the current article
+            ->orderBy('published_at', 'desc') // Order by published_at
+            ->limit(5) // Limit to 5 articles
+            ->get();
+    
+        return view('article', compact('post', 'otherArticles'));
     }
+    
 
     public function article()
     {
