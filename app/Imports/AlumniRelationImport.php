@@ -34,12 +34,10 @@ class AlumniRelationImport implements ToModel, PersistRelations, WithHeadingRow,
 
         $alumni = new Alumni([
             'name' => $row["name"],
+            'alumni_year_id' => $alumniYear->id,
         ]);
 
         $alumni->save();
-
-
-        $alumni->alumni_years()->attach($alumniYear->id);
 
         return $alumni;
     }

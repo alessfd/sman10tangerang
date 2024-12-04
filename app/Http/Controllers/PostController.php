@@ -7,6 +7,7 @@ use App\Models\AlumniYear;
 use App\Models\post;
 use App\Models\SchoolProfile;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -73,10 +74,10 @@ class PostController extends Controller
                 $query->where('year', $year);
             })
             ->orderBy('id', 'asc')
-            ->paginate();
-        return view('alumni', compact('alumni'));
+            ->paginate(20);
+        return view('alumni', compact('alumni', 'year'));
     }
-
+    // select * from `alumni_years` where `alumni_years`.`id` in (15067633, 438190617, 670416382, 957630562, 1710267075, 3129621783, 3299072320, 3444747313, 4233683750, 4290800802, 4324629166, 4328649606, 4844513746, 5181285201, 5645894222) and `year` = '2001'
     /**
      * Show the form for creating a new resource.
      */

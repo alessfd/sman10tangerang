@@ -2,13 +2,23 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class AlumniYear extends Model
 {
+    use HasFactory;
+
     protected $fillable = ['year'];
+
+    public function alumnis(): HasMany
+    {
+        return $this->hasMany(Alumni::class);
+    }
+
 
     protected static function booted()
     {
@@ -17,14 +27,9 @@ class AlumniYear extends Model
         });
     }
 
-    public function alumnis(): BelongsToMany
+    public function gallery_events(): BelongsTo
     {
-        return $this->belongsToMany(Alumni::class);
-    }
-
-    public function gallery_events(): BelongsToMany
-    {
-        return $this->belongsToMany(GalleryEvent::class);
+        return $this->belongsTo(GalleryEvent::class);
     }
 
 
