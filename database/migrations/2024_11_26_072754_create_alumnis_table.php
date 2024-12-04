@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("name", 100);
             $table->string('photo', 2048)->nullable();
+            $table->foreignId('alumni_year_id')->references('id')->on('alumni_years')->onDelete('cascade');
             $table->timestamps();
         });
     }

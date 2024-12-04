@@ -42,6 +42,7 @@ class AlumniRelationImport implements ToModel, PersistRelations, WithHeadingRow,
         // Simpan data alumni
         $alumni = new Alumni([
             'name' => $row["name"],
+            'alumni_year_id' => $alumniYear->id,
             'photo' => $photoPath,
         ]);
 
