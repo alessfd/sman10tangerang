@@ -158,7 +158,6 @@
     </header>
     {{$slot}}
 
-
     <!-- Footer -->
     <footer class="bg-gray-800 text-white mt-5">
         <div class="mx-auto max-w-7xl p-6 grid grid-cols-2 lg:grid-cols-5 gap-8">
