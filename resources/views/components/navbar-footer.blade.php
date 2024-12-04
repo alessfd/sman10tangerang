@@ -2,12 +2,12 @@
 <body class="bg-white font-family-karla">
 
     <!-- Top Bar Nav -->
-    <header class="bg-white mb-8">
+    <header class="bg-white shadow mb-8">
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-            <div class="flex lg:flex-1">
-                <a href="/" class="-m-1.5 p-1.5">
-                    <span class="sr-only">Your Company</span>
-                    <img class="h-8 w-auto" src="/favicon.ico" alt="">
+            <div class="flex items-center">
+                <a href="/" class="flex items-center">
+                    <img class="h-12 w-auto" src="/favicon.ico" alt="Logo">
+                    <span class="text-xl font-bold text-gray-800 ml-3">SMAN 10 TANGERANG</span>
                 </a>
             </div>
             <div class="flex lg:hidden mobile-toggle">
@@ -159,18 +159,54 @@
     {{$slot}}
 
 
-    <footer class="w-full bg-white shadow  dark:bg-gray-800">
-        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 OSIS SMAN 10 Tanggerang
-            </span>
-            <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-                <li>
-                    <a href="#" class="hover:underline mx-2 me-4 md:me-6">About</a>
-                </li>
-                <li>
-                    <a href="#" class="mx-2 hover:underline">Contact</a>
-                </li>
-            </ul>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-5">
+        <div class="mx-auto max-w-7xl p-6 grid grid-cols-2 lg:grid-cols-5 gap-8">
+            <!-- Logo and School Name Section -->
+            <div class="flex items-center">
+                <img class="h-16 w-auto mr-3" src="/favicon.ico" alt="School Logo">
+                <span class="text-lg font-bold">SMAN 10 Tangerang</span>
+            </div>
+
+            <!-- About Section -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Tentang</h3>
+                <p class="text-sm">SMAN 10 Tangerang adalah sekolah unggulan yang berfokus pada pendidikan berkualitas dan pembangunan karakter siswa.</p>
+            </div>
+
+            <!-- Navigation Section -->
+            <div class="ml-10">
+                <h3 class="text-lg font-semibold mb-3">Navigasi</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/profil" class="hover:underline">Profil</a></li>
+                    <li><a href="/visi-misi" class="hover:underline">Visi & Misi</a></li>
+                    <li><a href="/fasilitas" class="hover:underline">Fasilitas</a></li>
+                    <li><a href="/article" class="hover:underline">Berita</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="-ml-10">
+                <h3 class="text-lg font-semibold mb-3">Kontak</h3>
+                <p class="text-sm">Jalan Pendidikan No. 10, Tangerang</p>
+                <p class="text-sm">Email: info@sman10tangerang.sch.id</p>
+                <p class="text-sm">Telepon: (021) 123-4567</p>
+            </div>
+
+            <!-- Social Media -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Sosial Media</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://instagram.com" class="hover:underline">Instagram</a></li>
+                    <li><a href="https://facebook.com" class="hover:underline">Facebook</a></li>
+                    <li><a href="https://twitter.com" class="hover:underline">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+        <div class="bg-gray-900 text-gray-400 text-center p-4">
+            © 2024 SMAN 10 Tangerang. All rights reserved.
         </div>
     </footer>
 

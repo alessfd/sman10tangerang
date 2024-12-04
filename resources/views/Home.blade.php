@@ -25,10 +25,7 @@
     <x-slot name="page">
         <!-- Posts Section -->
         <section class="w-full h-80 flex flex-col items-center px-3" style="height: 70vh;">
-
-
-
-            <div class="grid grid-cols-4 gap-4 m-8 md:m-12">
+            <div class="grid grid-cols-4 lg:gap-24 gap-8 m-8 md:m-12">
                 @foreach ($posts->take(4) as $post)
                     <div>
                         <x-post-item :post="$post"></x-post-item>
