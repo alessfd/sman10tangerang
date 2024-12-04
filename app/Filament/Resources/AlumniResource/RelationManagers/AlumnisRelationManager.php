@@ -43,12 +43,12 @@ class AlumnisRelationManager extends RelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('alumni_years.year')
-                    ->label("Angkatan")
+                    ->searchable()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('alumni_years.year')
+                    ->label("Angkatan"),
                 Tables\Columns\ImageColumn::make('photo')
-                    ->searchable(),
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
