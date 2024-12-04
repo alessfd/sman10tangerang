@@ -5,6 +5,8 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\AlumniResource\Pages;
 use App\Filament\Resources\AlumniResource\RelationManagers;
 use App\Models\Alumni;
+use Filament\Actions\Action;
+use Filament\Actions\ImportAction;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,6 +15,9 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+
+
+
 
 class AlumniResource extends Resource
 {
@@ -38,7 +43,7 @@ class AlumniResource extends Resource
                             ->disk('public')
                             ->imageEditor()
                             ->directory('alumnigallery'),
-                    ])
+                    ]),
             ]);
     }
 
@@ -93,4 +98,5 @@ class AlumniResource extends Resource
             'edit' => Pages\EditAlumni::route('/{record}/edit'),
         ];
     }
+
 }

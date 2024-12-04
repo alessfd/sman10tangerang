@@ -2,17 +2,20 @@
 
 namespace App\Filament\Resources\AlumniResource\RelationManagers;
 
-
+use App\Imports\AlumniRelationImport;
+use App\Models\AlumniYear;
+use Filament\Tables\Actions\Action;
 use Filament\Actions\CreateAction;
-use Filament\Actions\DeleteAction;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
-use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Container\Attributes\Storage;
+use Illuminate\Support\Facades\Storage as FacadesStorage;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AlumnisRelationManager extends RelationManager
 {
@@ -25,9 +28,6 @@ class AlumnisRelationManager extends RelationManager
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                // Forms\Components\Select::make('angkatan')
-                //     ->required()
-                //     ->relationship("alumni_years", "year"),
                 Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\FileUpload::make('photo')
@@ -63,6 +63,51 @@ class AlumnisRelationManager extends RelationManager
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make(),
+                Action::make('import')
+                ->label('Import Alumni')
+                ->icon('heroicon-o-document-arrow-down')
+                ->modalHeading('Import Alumni Data')
+                ->modalSubheading('Silakan unggah file Excel untuk mengimpor data alumni.')
+                ->form([
+                    FileUpload::make('file')
+                        ->label('File Excel')
+                        ->disk('local') // Disk penyimpanan sementara
+                        ->directory('temp') // Direktori penyimpanan sementara
+                        ->acceptedFileTypes([
+                            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xlsx
+                            'application/vnd.ms-excel', // .xls
+                            'text/xml', // .xml
+                            'application/xml', // Alternatif mime-type untuk .xml
+                        ])
+                        ->required(),
+                ])
+                ->action(function(array $data) {
+                    // Ambil file yang diunggah
+                    $filePath = $data['file'];
+                    $year = $this->ownerRecord->getYear();
+
+                    // Jika Anda ingin mengakses 'alumniYear' yang terkait, pastikan Anda memiliki relasi yang tepat
+                    // dump($this -> ownerRecord -> getYear());
+
+                    // Memastikan bahwa relasi alumniYear ada dan mengambil tahun
+                    // if ($alumniYear) {
+                    //     dump($alumniYear->year); // Menampilkan tahun alumni
+                    // } else {
+                    //     dump('No alumni year found');
+                    // }
+                    // Proses impor menggunakan Laravel Excel
+                    Excel::import(new AlumniRelationImport($filePath,$year) , $filePath);
+
+                    // Hapus file setelah impor selesai
+                    FacadesStorage::disk('local')->delete($filePath);
+
+                    // Kirim notifikasi sukses
+                    Notification::make()
+                    ->title('Berhasil')
+                    ->body('Data Berhasil Ditambahkan')
+                    ->success()
+                    ->send();
+                })
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -76,11 +121,5 @@ class AlumnisRelationManager extends RelationManager
     }
 
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            CreateAction::make(),
-        ];
-    }
 
 }
