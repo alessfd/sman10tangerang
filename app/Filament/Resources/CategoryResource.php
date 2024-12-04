@@ -30,6 +30,7 @@ class CategoryResource extends Resource
                     ->required()
                     ->maxLength(2048)
                     ->reactive()
+                    -> live( debounce: 500, onBlur:True)
                     ->afterStateUpdated(function($set, $state) {
                         $set('slug', Str::slug($state));
                     }),

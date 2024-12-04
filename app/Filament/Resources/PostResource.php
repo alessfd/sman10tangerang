@@ -13,6 +13,8 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use AmidEsfahani\FilamentTinyEditor\TinyEditor;
+
 use Str;
 
 class PostResource extends Resource
@@ -22,6 +24,7 @@ class PostResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     protected static ?string $navigationGroup = 'Content';
+
 
     public static function form(Form $form): Form
     {
@@ -35,6 +38,7 @@ class PostResource extends Resource
                                 ->required()
                                 ->maxLength(2048)
                                 ->reactive()
+                                -> live( debounce: 500, onBlur:True)
                                 ->afterStateUpdated(function($set, $state) {
                                     $set('slug', Str::slug($state));
                                 }),
@@ -43,17 +47,25 @@ class PostResource extends Resource
                                 ->maxLength(2048),
                         ]),
 
-                    Forms\Components\RichEditor::make('body')
-                        ->required()
-                        ->columnSpanFull(),
+                TinyEditor::make('body')
+                    ->fileAttachmentsDisk('public')
+                    ->fileAttachmentsDirectory('blogasset')
+                    ->ltr()
+                    ->resize('both')
+                    ->columnSpan('full')
+                    ->required(),
                     Forms\Components\Toggle::make('active')
                         ->required(),
                     Forms\Components\DateTimePicker::make('published_at')
-                        ->required(),
+                        ->minDate(now()),
                 ])->columnSpan(8),
             Forms\Components\Section::make()
                 ->schema([
-                    Forms\Components\FileUpload::make('thumbnail'),
+                    Forms\Components\FileUpload::make('thumbnail')
+                        ->image()
+                        ->disk('public')
+                        ->directory('thumbnail')
+                        ->imageEditor(),
                     Forms\Components\Select::make('categories')
                         ->multiple()
                         ->relationship('categories', 'title')
@@ -68,9 +80,7 @@ class PostResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('thumbnail')
+                Tables\Columns\ImageColumn::make('thumbnail')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('active')
                     ->boolean(),
