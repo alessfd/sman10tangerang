@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\post;
+use App\Models\Category;
 use App\Models\SchoolProfile;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -57,17 +58,47 @@ class PostController extends Controller
     }
     
 
-    public function article()
+    public function article(Request $request)
     {
+        $categories = Category::all();
 
-        $posts = Post::query()
+        $query = Post::query()
             ->where('active', '=', 1)
-            ->whereDate('published_At', '<=', date('Y-m-d'))
-            ->orderBy('published_at', 'desc')
-            ->paginate();
-
-        return view('article_gallery', compact('posts'));
+            ->whereDate('published_at', '<=', now());
+    
+        // Filter by categories
+        if ($request->has('categories') && is_array($request->categories)) {
+            $query->whereHas('categories', function ($q) use ($request) {
+                $q->whereIn('categories.id', $request->categories);
+            });
+        }
+    
+        // Search by title
+        if ($request->has('search') && $request->search) {
+            $query->where('title', 'like', '%' . $request->search . '%');
+        }
+    
+        $posts = $query->orderBy('published_at', 'desc')->paginate(12);
+    
+        return view('article_gallery', compact('categories', 'posts'));
     }
+
+    public function profile()
+    {
+        // Placeholder data: Replace with real teacher data later
+        $teachers = collect(range(1, 8))->map(function ($i) {
+            return [
+                'id' => $i,
+                'name' => "Teacher $i",
+                'subject' => "Subject $i",
+                'bio' => "This is a placeholder bio for teacher $i. Real data will be added later.",
+                'image' => 'https://via.placeholder.com/150', // Placeholder image
+            ];
+        });
+
+        return view('profile');
+    }
+
 
 
 

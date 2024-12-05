@@ -35,7 +35,7 @@
                                     <x-heroicon-o-academic-cap class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" />
                                 </div>
                                 <div class="flex-auto">
-                                    <a href="#" class="block font-semibold text-gray-900">
+                                    <a href="/profile" class="block font-semibold text-gray-900">
                                         Profil
                                         <span class="absolute inset-0"></span>
                                     </a>
@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="flex-auto">
                                     <a href="https://msha.ke/sman10kotatangerang?fbclid=PAZXh0bgNhZW0CMTEAAabYXd7F0FQh7J6ZMmGbeCCAXvt3O_q7vckJ55OQlnEmkjeeQJBtNR7wuLk_aem_3cicMyzU6hObm3fGMYm-xQ" class="block font-semibold text-gray-900">
-                                        Instagram
+                                        Link Tree
                                         <span class="absolute inset-0"></span>
                                     </a>
                                     <p class="mt-1 text-gray-600">Link Tree</p>
@@ -196,9 +196,7 @@
             <div>
                 <h3 class="text-lg font-semibold mb-3">Sosial Media</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="https://instagram.com" class="hover:underline">Instagram</a></li>
-                    <li><a href="https://facebook.com" class="hover:underline">Facebook</a></li>
-                    <li><a href="https://twitter.com" class="hover:underline">Twitter</a></li>
+                    <li><a href="https://msha.ke/sman10kotatangerang?fbclid=PAZXh0bgNhZW0CMTEAAabYXd7F0FQh7J6ZMmGbeCCAXvt3O_q7vckJ55OQlnEmkjeeQJBtNR7wuLk_aem_3cicMyzU6hObm3fGMYm-xQ" class="hover:underline">Get to Know Us</a></li>
                 </ul>
             </div>
         </div>
