@@ -7,6 +7,7 @@ Route::get( '/article/{slug}', [\App\Http\Controllers\PostController::class, 'ar
 Route::get( '/article', [\App\Http\Controllers\PostController::class, 'article'])->name('article');
 Route::get( '/alumni/{year}', [\App\Http\Controllers\PostController::class, 'alumniapp'])->name('alumniapp');
 Route::get( '/alumni', [\App\Http\Controllers\PostController::class, 'alumni'])->name('alumni');
+Route::get('/fasilitas', [\App\Http\Controllers\PostController::class, 'showFacilities'])->name('fasilitas');
 
 
 Route::get('/visi-misi', [\App\Http\Controllers\PostController::class, 'visiMisi'])->name('visimisi');

@@ -9,6 +9,7 @@ use App\Models\SchoolProfile;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use App\Models\SchoolFacility;
 
 class PostController extends Controller
 {
@@ -34,6 +35,14 @@ class PostController extends Controller
         return view('visi-misi', compact('profiles')); // Return the Visi Misi view
     }
    
+    public function showFacilities()
+    {
+        $facilities = SchoolFacility::all();
+
+        // Mengirim data fasilitas ke view
+        return view('facilities', compact('facilities'));
+    }
+
     public function contact()
     {
         // Return the 'contact' view
