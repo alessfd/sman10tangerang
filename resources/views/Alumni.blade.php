@@ -1,6 +1,6 @@
 <x-articleapp-layout>
     <body>
-        <div class="w-3/5 mx-auto">
+        <div class="w-3/5 mt-6 mx-auto">
             <a href="/alumni">Alumni</a> > <a>{{ $year }}</a>
             <p class="text-center text-6xl font-bold mb-6">Angkatan {{ $year }}</p>
             <div class="flex justify-center">

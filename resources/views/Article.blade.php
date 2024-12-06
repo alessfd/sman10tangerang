@@ -1,7 +1,7 @@
 <x-articleapp-layout>
     <body class="text-justify">
 
-        <div class="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row gap-10" style="width: 50vw">
+        <div class="container mx-auto px-6 lg:px-20 flex flex-col gap-10">
             <!-- Main Content -->
 						<div>
 								<h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">{{$post->title}}</h1>

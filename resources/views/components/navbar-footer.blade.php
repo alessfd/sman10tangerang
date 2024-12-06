@@ -2,7 +2,7 @@
 <body class="bg-white font-family-karla">
 
     <!-- Top Bar Nav -->
-    <header class="bg-white shadow mb-8">
+    <header class="bg-white shadow">
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex items-center">
                 <a href="/" class="flex items-center">
@@ -71,7 +71,7 @@
                                     <x-heroicon-o-building-library class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" />
                                 </div>
                                 <div class="flex-auto">
-                                    <a href="#" class="block font-semibold text-gray-900">
+                                    <a href="/facilities" class="block font-semibold text-gray-900">
                                         Fasilitas
                                         <span class="absolute inset-0"></span>
                                     </a>
@@ -142,7 +142,7 @@
                                     <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Profil</a>
                                     <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Visi Misi</a>
                                     <a href="/alumni" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Alumni</a>
-                                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Fasilitas</a>
+                                    <a href="/facilities" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Fasilitas</a>
                                 </div>
                             </div>
                             <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Social</a>
