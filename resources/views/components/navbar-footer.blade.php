@@ -59,7 +59,7 @@
                                     <x-heroicon-o-user class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" />
                                 </div>
                                 <div class="flex-auto">
-                                    <a href="#" class="block font-semibold text-gray-900">
+                                    <a href="/alumni" class="block font-semibold text-gray-900">
                                         Alumni
                                         <span class="absolute inset-0"></span>
                                     </a>
@@ -71,7 +71,7 @@
                                     <x-heroicon-o-building-library class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" />
                                 </div>
                                 <div class="flex-auto">
-                                    <a href="#" class="block font-semibold text-gray-900">
+                                    <a href="/fasilitas" class="block font-semibold text-gray-900">
                                         Fasilitas
                                         <span class="absolute inset-0"></span>
                                     </a>
@@ -141,7 +141,7 @@
                                 <div class="mt-2 space-y-2 hidden" id="disclosure-1">
                                     <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Profil</a>
                                     <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Visi Misi</a>
-                                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Alumni</a>
+                                    <a href="/alumni" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Alumni</a>
                                     <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">Fasilitas</a>
                                 </div>
                             </div>
@@ -200,7 +200,6 @@
                 </ul>
             </div>
         </div>
-
         <!-- Footer Bottom Section -->
         <div class="bg-gray-900 text-gray-400 text-center p-4">
             © 2024 SMAN 10 Tangerang. All rights reserved.

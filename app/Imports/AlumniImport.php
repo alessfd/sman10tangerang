@@ -39,13 +39,14 @@ class AlumniImport implements ToModel, PersistRelations, WithHeadingRow, WithSki
         // Simpan data alumni
         $alumni = new Alumni([
             'name' => $row["name"],
+            'alumni_year_id' => $alumniYear->id,
             'photo' => $photoPath,
         ]);
 
         $alumni->save();
 
         // Kaitkan alumni dengan tahun
-        $alumni->alumni_years()->attach($alumniYear->id);
+
 
         return $alumni;
     }

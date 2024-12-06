@@ -2,21 +2,25 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Alumni extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'name',
-        'photo'
+        'photo',
+        'alumni_year_id'
     ];
-
-    public function alumni_years():BelongsToMany
+    public function alumni_years(): BelongsTo
     {
-        return $this->belongsToMany(AlumniYear::class);
+        return $this->belongsTo(AlumniYear::class, 'alumni_year_id', 'id');
     }
 
     protected static function booted()
