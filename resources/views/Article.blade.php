@@ -1,16 +1,14 @@
 <x-articleapp-layout>
     <body class="text-justify">
 
-        <div class="container mx-auto px-6 lg:px-20 flex flex-col gap-10">
+        <div class="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row gap-10" style="width: 100vw">
             <!-- Main Content -->
-						<div>
-								<h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">{{$post->title}}</h1>
-								<p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-										{{ $post->getFormattedDate() }}
-								</p>
-						</div>
-						
             <div class="lg:w-3/4">
+                <h1 class=" text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">{{$post->title}}</h1>
+                <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+                        {{ $post->getFormattedDate() }}
+                </p>
+
                 @if(isset($post->thumbnail))
                 <img src="{{ asset('storage/' . $post->thumbnail) }}" style="max-height: 50vh" class="w-full mb-12 rounded-lg">
                 @endif

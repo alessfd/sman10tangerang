@@ -12,7 +12,7 @@
 
     <!-- Tailwind -->
     <link rel="stylesheet" href="{{ asset('css/home/home.css') }}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 
     <script src="{{asset('js/home/home.js')}}"></script>
