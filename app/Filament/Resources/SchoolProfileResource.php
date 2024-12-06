@@ -53,19 +53,10 @@ class SchoolProfileResource extends Resource
                 -> prefix('+62')
                 -> maxlength(11)
                 ->required(),
-                Forms\Components\Repeater::make('visi')
-                    ->simple(
-                        Forms\Components\TextInput::make('value')
-                            ->label('Visi')
-                            ->required()
-                            ->maxLength(2074),
-                    )
-                ->columnSpanFull()
-                ->collapsed()
-                ->minItems(1)
-                ->reorderableWithButtons()
-                ->addActionLabel('Tambah Visi')
-                ->addActionAlignment(Alignment::Start),
+                Forms\Components\TextInput::make('visi')
+                ->required()
+                ->maxLength(30),
+
                 Forms\Components\Repeater::make("misi")
                     ->simple(
 
