@@ -48,9 +48,6 @@ class AlumniRelationImport implements ToModel, PersistRelations, WithHeadingRow,
 
         $alumni->save();
 
-        // Kaitkan alumni dengan tahun
-        $alumni->alumni_years()->attach($alumniYear->id);
-
         return $alumni;
     }
 
