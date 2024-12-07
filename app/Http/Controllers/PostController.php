@@ -25,15 +25,15 @@ class PostController extends Controller
         ->whereDate('published_At', '<=', date('Y-m-d'))
         ->orderBy('published_at', 'desc')
         ->paginate();
-        
+
         return view('home', compact('posts'));
     }
-    
+
     public function visiMisi()
     {
         $profiles = SchoolProfile::query()
         ->first();
-        
+
         return view('visi-misi', compact('profiles')); // Return the Visi Misi view
     }
    
@@ -58,7 +58,7 @@ class PostController extends Controller
             ->whereDate('published_at', '<=', date('Y-m-d'))
             ->where('slug', $slug)
             ->firstOrFail();
-    
+
         $otherArticles = Post::query()
             ->where('active', '=', 1)
             ->whereDate('published_at', '<=', date('Y-m-d'))
@@ -66,10 +66,10 @@ class PostController extends Controller
             ->orderBy('published_at', 'desc') // Order by published_at
             ->limit(5) // Limit to 5 articles
             ->get();
-    
+
         return view('article', compact('post', 'otherArticles'));
     }
-    
+
 
     public function article(Request $request)
     {

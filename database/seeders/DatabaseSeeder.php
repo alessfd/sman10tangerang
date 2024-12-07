@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+
 use App\Models\User;
+use App\Models\SchoolProfile;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -23,6 +25,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             AlumniSeeder::class,
+            SchoolProfileSeeder::class,
         ]);
+
     }
 }
