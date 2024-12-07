@@ -12,7 +12,7 @@
 
     <!-- Tailwind -->
     <link rel="stylesheet" href="{{ asset('css/home/home.css') }}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 
     <script src="{{asset('js/home/home.js')}}"></script>
@@ -31,32 +31,29 @@
 </head>
 
 <body class="bg-white font-family-karla">
-
     <x-navbar-footer>
-
-
-        <div id="image-carousel" class="relative flex  w-full justify-center items-center" data-carousel="slide" style="height: 80vh;">
+        <div id="image-carousel" class="relative flex w-full justify-center items-center" data-carousel="slide">
             <!-- Carousel wrapper -->
-            <div class="relative h-full w-5/6 overflow-hidden rounded-lg md:h-96 p-4" style="height: 75vh;">
+            <div class="relative w-full h-full overflow-hidden md:h-96 p-4" style="height: 75vh;">
                 <!-- Item 1 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <img src="{{ asset('/img/home1.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 2 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <img src="{{ asset('/img/home2.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 3 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <img src="{{ asset('/img/home3.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 4 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <img src="{{ asset('/img/home4.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 5 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <img src="{{ asset('/img/home5.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
             </div>
             <!-- Slider indicators -->
@@ -73,7 +70,7 @@
 
 
 
-        <div class="container mx-auto flex flex-wrap py-6 h-auto">
+        <div class="container mt-6 mx-auto px-6 flex h-auto">
 
             <!-- Posts Section -->
             <section class="w-full md:w-2/3 h-full flex flex-col items-center px-3 ">
@@ -83,9 +80,8 @@
             </section>
 
             <!-- Sidebar Section -->
-            <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
-
-                <div class="w-full bg-white shadow flex flex-col my-4 p-6 text-justify" style=" text-justify: inter-word; hyphens: auto;">
+            <aside class="w-full flex flex-col items-center px-3">
+                <div class="w-full bg-white shadow flex flex-col p-6 text-justify" style=" text-justify: inter-word; hyphens: auto;">
                     <p class="text-xl font-semibold pb-5">About Us</p>
                     <p class="pb-2">SMAN 10 Tangerang Selatan, berdiri sejak tahun 2006 dengan terakreditasi "A" adalah sekolah unggulan yang mengutamakan keunggulan akademik serta pengembangan karakter siswa. Dilengkapi dengan fasilitas modern, seperti laboratorium sains dan komputer, perpustakaan, lapangan olahraga, dan kantin, kami juga menawarkan berbagai ekstrakurikuler, termasuk tim olahraga, klub seni, dan kelompok sains. Dengan visi mencetak lulusan berprestasi yang siap berkontribusi positif bagi masyarakat.</p>
                     <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
