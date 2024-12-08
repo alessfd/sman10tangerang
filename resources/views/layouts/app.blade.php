@@ -92,7 +92,7 @@
 
         </div>
 
-        <section class="w-full flex flex-col items-center px-3" style="height: 70vh;">
+        <section class="w-full flex flex-col items-center px-3" style="height: 40vh;">
 
             {{$page}}
 

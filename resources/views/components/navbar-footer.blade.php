@@ -1,12 +1,16 @@
+<style>
+    #navbar {
+    transition: background-color 0.5s ease;
+}
+</style>
 
-<body class="bg-white font-family-karla">
-
+<body class="bg-white font-family-karla flex flex-col min-h-screen">
     <!-- Top Bar Nav -->
-    <header class="bg-white shadow">
+    <header class="bg-transparent shadow fixed top-0 w-full z-10" id="navbar"">
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex items-center">
                 <a href="/" class="flex items-center">
-                    <img class="h-12 w-auto" src="/favicon.ico" alt="Logo">
+                    <img class="h-12 w-auto transition-transform duration-300 ease-in-out hover:scale-110" src="/favicon.ico" alt="Logo">
                     <span class="text-xl font-bold text-gray-800 ml-3">SMAN 10 TANGERANG</span>
                 </a>
             </div>
@@ -82,36 +86,14 @@
                     </div>
                 </div>
 
-                <div class="social-dropdown relative">
-                    <button type="button" class="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900" aria-expanded="false">
-                        Social
-                        <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                            <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                        </svg>
-                    </button>
-
-
-                    <div class="absolute hidden -left-8 top-full z-10 mt-3 max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5" style="width: 19.5vw;">
-                        <div class="p-4">
-                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
-                                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                    <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
-                                    </svg>
-                                </div>
-                                <div class="flex-auto">
-                                    <a href="https://msha.ke/sman10kotatangerang?fbclid=PAZXh0bgNhZW0CMTEAAabYXd7F0FQh7J6ZMmGbeCCAXvt3O_q7vckJ55OQlnEmkjeeQJBtNR7wuLk_aem_3cicMyzU6hObm3fGMYm-xQ" class="block font-semibold text-gray-900">
-                                        Link Tree
-                                        <span class="absolute inset-0"></span>
-                                    </a>
-                                    <p class="mt-1 text-gray-600">Link Tree</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- <a href="#" class="text-sm/6 font-semibold text-gray-900">Email</a> -->
                 <a href="/article" class="text-sm/6 font-semibold text-gray-900">Berita</a>
+                
+                <a href="http://154.41.229.66/login/index.php" target="_blank" class="text-sm/6 font-semibold text-gray-900">Moodle</a>
+                
+                <a href="http://116.197.131.41:2023/login" target="_blank" class="text-sm/6 font-semibold text-gray-900">E-Raport</a>
+
+                <a href="https://msha.ke/sman10kotatangerang?fbclid=PAZXh0bgNhZW0CMTEAAabYXd7F0FQh7J6ZMmGbeCCAXvt3O_q7vckJ55OQlnEmkjeeQJBtNR7wuLk_aem_3cicMyzU6hObm3fGMYm-xQ" class="text-sm/6 font-semibold text-gray-900">Sosial</a>
             </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
@@ -156,7 +138,11 @@
             </div>
         </div>
     </header>
-    {{$slot}}
+    
+    <div class="flex-grow">
+        {{$slot}}
+    </div>
+
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white mt-5">
@@ -187,7 +173,7 @@
             <!-- Contact Section -->
             <div class="-ml-10">
                 <h3 class="text-lg font-semibold mb-3">Kontak</h3>
-                <p class="text-sm">Jalan Pendidikan No. 10, Tangerang</p>
+                <p class="text-sm">Jln. KH. Hasyim Ashari Gg. Sasak Poris Plawad Indah Cipondoh Kota Tangerang 15141</p>
                 <p class="text-sm">Email: info@sman10tangerang.sch.id</p>
                 <p class="text-sm">Telepon: (021) 123-4567</p>
             </div>
@@ -208,4 +194,21 @@
 
 </body>
 
+<script>
+    // Get the navbar element
+    const navbar = document.getElementById('navbar');
 
+    // Function to handle scroll event
+    function handleScroll() {
+        if (window.scrollY > 0) {
+            navbar.classList.remove('bg-transparent');
+            navbar.classList.add('bg-white'); // Or any color you prefer
+        } else {
+            navbar.classList.remove('bg-white');
+            navbar.classList.add('bg-transparent');
+        }
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+</script>

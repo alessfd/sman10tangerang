@@ -33,20 +33,18 @@
 
             <!-- Teachers Section -->
             <h2 class="text-2xl font-bold text-center mb-6">Our Teachers</h2>
-            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
-                @foreach (range(1, 18) as $placeholder) {{-- Replace this with real data later --}}
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-36 bg-gray-300 flex items-center justify-center">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                @foreach ($teachers as $teacher)
+                    <div class="card bg-white shadow-md p-4 rounded-lg">
+                        <div class="image-container h-40 w-40 mx-auto">
                             <img 
-                                src="{{ asset('storage/default/default-avatar-icon-of-social-media-user-vector.jpg') }}" 
-                                alt="Default Avatar" 
-                                class="h-full w-full object-cover"
-                            >
+                                src="{{ asset('storage/' . $teacher->photo) }}" 
+                                alt="{{ $teacher->name }}" 
+                                class="h-full w-full object-cover rounded-full" 
+                            />
                         </div>
-                        <div class="p-3">
-                            <h2 class="text-sm font-bold">Teacher Name</h2>
-                            <p class="text-xs text-gray-600">Subject Placeholder</p>
-                        </div>
+                        <h3 class="text-center mt-2 font-semibold">{{ $teacher->name }}</h3>
+                        <p class="text-center text-sm text-gray-600">{{ $teacher->job }}</p>
                     </div>
                 @endforeach
             </div>

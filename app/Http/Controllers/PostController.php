@@ -7,11 +7,11 @@ use App\Models\AlumniYear;
 use App\Models\post;
 use App\Models\Category;
 use App\Models\SchoolProfile;
-use App\Models\SchoolFacility;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Models\SchoolFacility;
+use App\Models\LectureProfile;
 
 class PostController extends Controller
 {
@@ -37,14 +37,6 @@ class PostController extends Controller
         return view('visi-misi', compact('profiles')); // Return the Visi Misi view
     }
    
-    public function showFacilities()
-    {
-        $facilities = SchoolFacility::all();
-
-        // Mengirim data fasilitas ke view
-        return view('facilities', compact('facilities'));
-    }
-
     public function contact()
     {
         // Return the 'contact' view
@@ -96,20 +88,26 @@ class PostController extends Controller
         return view('article_gallery', compact('categories', 'posts'));
     }
 
-    public function profile()
-    {
-        // Placeholder data: Replace with real teacher data later
-        $teachers = collect(range(1, 8))->map(function ($i) {
-            return [
-                'id' => $i,
-                'name' => "Teacher $i",
-                'subject' => "Subject $i",
-                'bio' => "This is a placeholder bio for teacher $i. Real data will be added later.",
-                'image' => 'https://via.placeholder.com/150', // Placeholder image
-            ];
-        });
+    // public function profile()
+    // {
+    //     // Placeholder data: Replace with real teacher data later
+    //     $teachers = collect(range(1, 8))->map(function ($i) {
+    //         return [
+    //             'id' => $i,
+    //             'name' => "Teacher $i",
+    //             'subject' => "Subject $i",
+    //             'bio' => "This is a placeholder bio for teacher $i. Real data will be added later.",
+    //             'image' => 'https://via.placeholder.com/150', // Placeholder image
+    //         ];
+    //     });
 
-        return view('profile');
+    //     return view('profile');
+    // }
+
+    public function Profile()
+    {
+        $teachers = LectureProfile::all(); // Fetch all teacher data
+        return view('profile', compact('teachers'));
     }
 
     public function alumni()
