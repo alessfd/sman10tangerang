@@ -11,7 +11,7 @@ use App\Models\SchoolFacility;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use App\Models\SchoolFacility;
+
 
 class PostController extends Controller
 {
