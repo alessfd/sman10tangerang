@@ -37,6 +37,7 @@ class PostController extends Controller
         return view('visi-misi', compact('profiles')); // Return the Visi Misi view
     }
    
+
     public function contact()
     {
         // Return the 'contact' view
