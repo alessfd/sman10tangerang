@@ -62,7 +62,7 @@ class LectureProfileResource extends Resource
                         Forms\Components\FileUpload::make('photo')
                         ->image()
                         ->disk('public')
-                        ->directory('photolecture')
+                        ->directory('teacher_photos')
                         ->default(null)
                         ->imageEditor()
                         ->avatar()
