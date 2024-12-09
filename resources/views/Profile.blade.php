@@ -9,14 +9,14 @@
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden w-48">
                             <div class="h-48 bg-gray-300 flex items-center justify-center">
                                 <img 
-                                    src="{{ asset('storage/default/default-avatar-icon-of-social-media-user-vector.jpg') }}" 
-                                    alt="Headmaster Avatar" 
+                                    src="{{ asset('storage/' . $headmaster->photo) }}" 
+                                    alt="{{ $headmaster->name }}" 
                                     class="h-full w-full object-cover"
                                 >
                             </div>
                             <div class="p-4 text-center">
-                                <h1 class="text-lg font-bold">Headmaster Name</h1>
-                                <p class="text-sm text-gray-600">School Headmaster</p>
+                                <h1 class="text-lg font-bold">{{ $headmaster->name }}</h1>
+                                <p class="text-sm text-gray-600"> {{ $headmaster->jabatan }}</p>
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,6 @@
                             />
                         </div>
                         <h3 class="text-center mt-2 font-semibold">{{ $teacher->name }}</h3>
-                        <p class="text-center text-sm text-gray-600">{{ $teacher->job }}</p>
                     </div>
                 @endforeach
             </div>
