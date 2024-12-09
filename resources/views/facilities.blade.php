@@ -1,5 +1,5 @@
 <!-- resources/views/facilities.blade.php -->
-<x-articleapp-layout>
+<x-facility-layout>
     <x-slot name="slot">
         <!-- Facilities Content Section -->
         <section class="w-full h-auto flex flex-col items-center px-3 py-6">
@@ -12,15 +12,11 @@
         @foreach ($facilities as $facility)
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <!-- Gambar -->
-                @if ($facility->images)
-                    <div class="flex-shrink-0">
-                        <div class="flex flex-wrap gap-4">
-                            @foreach ($facility->images as $image)
-                                <img src="{{ Storage::url($image) }}" alt="Facility Image" class="w-78 h-60 object-cover rounded-lg shadow-md">
-                            @endforeach
-                        </div>
+                <div class="flex-shrink-0">
+                    <div class="flex flex-wrap gap-4">
+                        <img src="{{  asset('storage/' . $facility->images)  }}" alt="Facility Image" class="w-80 h-60 object-cover rounded-lg shadow-md">
                     </div>
-                @endif
+                </div>
 
                 <!-- Teks -->
                 <div>
