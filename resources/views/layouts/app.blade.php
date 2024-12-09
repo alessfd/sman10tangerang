@@ -30,75 +30,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-white font-family-karla">
+<body class="bg-white font-family-karla flex flex-col min-h-screen">
     <x-navbar-footer>
-        <div id="image-carousel" class="relative flex w-full justify-center items-center" data-carousel="slide">
+        <div id="image-carousel" class="relative w-full" data-carousel="slide">
             <!-- Carousel wrapper -->
-            <div class="relative w-full h-full overflow-hidden md:h-96 p-4" style="height: 75vh;">
-                <!-- Item 1 -->
+            <div class="relative h-[50vh] md:h-[75vh] overflow-hidden" style="height:40vw;">
+                <!-- Slides -->
+                @foreach (range(1, 5) as $index)
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="{{ asset('/img/home1.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <img src="{{ asset("img/home$index.jpg") }}" 
+                         class="absolute w-full h-full object-cover" alt="Slide {{ $index }}">
                 </div>
-                <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="{{ asset('/img/home2.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                </div>
-                <!-- Item 3 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="{{ asset('/img/home3.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                </div>
-                <!-- Item 4 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="{{ asset('/img/home4.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                </div>
-                <!-- Item 5 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="{{ asset('/img/home5.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                </div>
+                @endforeach
             </div>
+
             <!-- Slider indicators -->
-            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+            <div class="absolute bottom-5 left-1/2 flex -translate-x-1/2 space-x-3 z-20">
+                @foreach (range(0, 4) as $index)
+                <button type="button" class="w-3 h-3 rounded-full" aria-label="Slide {{ $index + 1 }}" data-carousel-slide-to="{{ $index }}"></button>
+                @endforeach
             </div>
 
         </div>
 
-
-
-
-        <div class="container mt-6 mx-auto px-6 flex h-auto">
-
-            <!-- Posts Section -->
-            <section class="w-full md:w-2/3 h-full flex flex-col items-center px-3 ">
-
-                {{ $slot }}
-
-            </section>
-
-            <!-- Sidebar Section -->
-            <aside class="w-full flex flex-col items-center px-3">
-                <div class="w-full bg-white shadow flex flex-col p-6 text-justify" style=" text-justify: inter-word; hyphens: auto;">
-                    <p class="text-xl font-semibold pb-5">About Us</p>
-                    <p class="pb-2">SMAN 10 Tangerang Selatan, berdiri sejak tahun 2006 dengan terakreditasi "A" adalah sekolah unggulan yang mengutamakan keunggulan akademik serta pengembangan karakter siswa. Dilengkapi dengan fasilitas modern, seperti laboratorium sains dan komputer, perpustakaan, lapangan olahraga, dan kantin, kami juga menawarkan berbagai ekstrakurikuler, termasuk tim olahraga, klub seni, dan kelompok sains. Dengan visi mencetak lulusan berprestasi yang siap berkontribusi positif bagi masyarakat.</p>
-                    <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
-                        Get to know us
-                    </a>
+       <div class="container mx-auto px-4 mt-8">
+            <section class="flex flex-col lg:flex-row lg:space-x-8">
+                <div class="w-full lg:w-2/3">
+                    {{ $slot }}
                 </div>
-            </aside>
-
+                <aside class="w-full lg:w-1/3 mt-8 lg:mt-0">
+                    <div class="bg-white shadow rounded-lg p-6">
+                        <p class="text-xl font-bold mb-4">About Us</p>
+                        <p class="text-justify text-gray-700 mb-4">
+                            SMAN 10 Tangerang Selatan, established in 2006 with an "A" accreditation, is a top-tier school emphasizing academic excellence and character development...
+                        </p>
+                        <a href="/contact" class="block text-center bg-blue-800 text-white font-bold text-sm uppercase rounded px-4 py-3 hover:bg-blue-700">Get to know us</a>
+                    </div>
+                </aside>
+            </section>
         </div>
 
-        <section class="w-full flex flex-col items-center px-3" style="height: 40vh;">
-
+        <!-- Additional Section -->
+        <div class="mt-12 mb-12">
             {{$page}}
-
-        </section>
-
-
+        </div>
 </body>
 </x-navbar-footer>
 
