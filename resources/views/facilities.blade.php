@@ -1,5 +1,5 @@
 <!-- resources/views/facilities.blade.php -->
-<x-facility-layout>
+<x-articleapp-layout>
     <x-slot name="slot">
         <!-- Facilities Content Section -->
         <section class="w-full h-auto flex flex-col items-center px-3 py-6">
@@ -36,4 +36,4 @@
 </div>
         </section>
     </x-slot>
-</x-facility-layout>
+</x-articleapp-layout>

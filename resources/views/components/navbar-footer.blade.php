@@ -1,12 +1,12 @@
-<style>
+<!-- <style>
     #navbar {
     transition: background-color 0.5s ease;
 }
-</style>
+</style> -->
 
 <body class="bg-white font-family-karla flex flex-col min-h-screen">
     <!-- Top Bar Nav -->
-    <header class="bg-transparent shadow fixed top-0 w-full z-10" id="navbar"">
+    <header class="bg-white shadow top-0 w-full z-10" id="navbar"">
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex items-center">
                 <a href="/" class="flex items-center">
@@ -194,7 +194,7 @@
 
 </body>
 
-<script>
+<!-- <script>
     // Get the navbar element
     const navbar = document.getElementById('navbar');
 
@@ -211,4 +211,4 @@
 
     // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
-</script>
+</script> -->
