@@ -26,7 +26,9 @@ class PostController extends Controller
         ->orderBy('published_at', 'desc')
         ->paginate();
 
-        return view('home', compact('posts'));
+        $facilities = SchoolFacility::take(2)->get();
+
+        return view('home', compact('posts', 'facilities'));
     }
 
     public function visiMisi()

@@ -1,9 +1,22 @@
 <x-app-layout>
     <x-slot name="slot">
-        <!-- Two Image Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-            <img class="rounded-lg shadow-md" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-            <img class="rounded-lg shadow-md" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
+        <!-- Facilities Section -->
+        <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <h2 class="text-3xl font-semibold text-gray-900 mb-4 text-center">Our Facilities</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                @foreach ($facilities->take(2) as $facility)
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <img 
+                            src="{{ asset('storage/' . $facility->images) }}" 
+                            alt="{{ $facility->name }}" 
+                            class="w-full h-48 object-cover rounded-md mb-4"
+                        >
+                        <h3 class="text-xl font-semibold text-gray-800">{{ $facility->name }}</h3>
+                        <p class="text-sm text-gray-600 mt-2">{{ Str::limit($facility->description, 100) }}</p>
+                        <a href="/facilities" class="text-blue-500 hover:text-blue-700 mt-4 inline-block">Read More</a>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </x-slot>
 

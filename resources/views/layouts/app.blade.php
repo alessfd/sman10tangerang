@@ -53,12 +53,15 @@
 
         </div>
 
-       <div class="container mx-auto px-4 mt-8">
+        <div class="container mx-auto px-4 mt-8">
             <section class="flex flex-col lg:flex-row lg:space-x-8">
-                <div class="w-full lg:w-2/3">
+                <!-- Main content section -->
+                <div class="w-full lg:w-2/3 space-y-6">
                     {{ $slot }}
                 </div>
-                <aside class="w-full lg:w-1/3 mt-8 lg:mt-0">
+
+                <!-- About Us section -->
+                <aside class="w-full lg:w-1/4 mt-8 lg:mt-0">
                     <div class="bg-white shadow rounded-lg p-6">
                         <p class="text-xl font-bold mb-4">About Us</p>
                         <p class="text-justify text-gray-700 mb-4">
@@ -70,16 +73,11 @@
             </section>
         </div>
 
-        <!-- Additional Section -->
-        <div class="mt-12 mb-12">
+        <!-- Facilities section -->
+        <div class="mb-12">
             {{$page}}
         </div>
 </body>
+
 </x-navbar-footer>
-
-
-
-
-
-
 </html>
