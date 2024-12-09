@@ -16,10 +16,6 @@ class SchoolFacility extends Model
         'status',
     ];
 
-    protected $casts = [
-        'images' => 'array'
-    ];
-
 
     protected static function booted()
     {
@@ -31,15 +27,10 @@ class SchoolFacility extends Model
 
 
         static::updating(function ($schoolFacility) {
-
             if ($schoolFacility->isDirty('images')) {
                 $oldPictures = $schoolFacility->getOriginal('images');
-                $newPictures = $schoolFacility->images;
-
-                $removedPictures = array_diff($oldPictures ?? [], $newPictures ?? []);
-
-                foreach ($removedPictures as $filePath) {
-                    Storage::disk('public')->delete($filePath);
+                if ($oldPictures) {
+                    Storage::disk('public')->delete($oldPictures);
                 }
             }
         });
