@@ -40,10 +40,10 @@
                                 </div>
                                 <div class="flex-auto">
                                     <a href="/profile" class="block font-semibold text-gray-900">
-                                        Profil
+                                        Profil Sekolah
                                         <span class="absolute inset-0"></span>
                                     </a>
-                                    <p class="mt-1 text-gray-600">Profil Sekolah</p>
+                                    <p class="mt-1 text-gray-600">Profil Guru dan Staf</p>
                                 </div>
                             </div>
                             <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">

@@ -107,8 +107,10 @@ class PostController extends Controller
 
     public function Profile()
     {
-        $teachers = LectureProfile::all(); // Fetch all teacher data
-        return view('profile', compact('teachers'));
+        $headmaster = LectureProfile::where('jabatan', 'Kepala Sekolah')->first();
+
+        $teachers = LectureProfile::where('jabatan', '!=', 'Kepala Sekolah')->get(); // Fetch teachers data
+        return view('profile', compact('headmaster', 'teachers'));
     }
 
     public function alumni()
