@@ -37,13 +37,7 @@ class PostController extends Controller
         return view('visi-misi', compact('profiles')); // Return the Visi Misi view
     }
    
-    public function showFacilities()
-    {
-        $facilities = SchoolFacility::all();
 
-        // Mengirim data fasilitas ke view
-        return view('facilities', compact('facilities'));
-    }
 
     public function contact()
     {
