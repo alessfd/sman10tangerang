@@ -1,22 +1,35 @@
 <!-- resources/views/visi-misi.blade.php -->
 <x-visi-layout>
     <x-slot name="slot">
-        <!-- Visi Misi Content Section -->
+
         <section class="w-full h-auto flex flex-col items-center px-3 py-6">
             <h1 class="text-4xl font-semibold text-gray-900 mb-6">VISI MISI SMA NEGERI 10 TANGERANG</h1>
 
-            <div class="w-full max-w-4xl p-6 bg-white shadow-md rounded-lg">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">A. VISI</h2>
-                <p class="text-lg text-gray-600">
-                    {{$profiles->visi}}
-                </p>
+            <!-- Visi Section with Image and Content -->
+            <div class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-6 w-full max-w-7xl mx-auto p-6 bg-white shadow-md rounded-lg items-center justify-center">
+                <img src="{{ asset('img/visi.png') }}" alt="Visi Design" class="w-full h-auto max-h-96 object-contain mb-6 lg:mb-0">
+                
+                <!-- Visi Content -->
+                <div class="mt-6 lg:mt-0 text-center lg:text-left">
+                    <p class="text-2xl text-gray-600 leading-relaxed">
+                        {{$profiles->visi}}
+                    </p>
+                </div>
+            </div>
 
-                <h2 class="text-2xl font-semibold text-gray-800 mt-6 mb-4">B. MISI</h2>
-                <ol class="list-decimal pl-6 text-lg text-gray-600">
-                    @foreach ($profiles->misi as $misi)
-                    <li>{{$misi}}</li>
-                    @endforeach
-                </ol>
+            <!-- Misi Section with Content and Image -->
+            <div class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-6 w-full max-w-7xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 items-center justify-center">
+                <!-- Misi Content -->
+                <div class="mt-6 lg:mt-0 text-center lg:text-left order-2 lg:order-1">
+                    <ol class="list-decimal pl-6 text-2xl text-gray-600 leading-relaxed">
+                        @foreach ($profiles->misi as $misi)
+                        <li>{{$misi}}</li>
+                        @endforeach
+                    </ol>
+                </div>
+                
+                <!-- Canva Image for Misi -->
+                <img src="{{ asset('img/misi.png') }}" alt="Misi Design" class="w-full h-auto order-1 lg:order-2 max-h-96 object-contain mb-6 lg:mb-0">
             </div>
         </section>
     </x-slot>
