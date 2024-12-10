@@ -30,4 +30,4 @@
             </div>
         </section>
     </x-slot>
-</x-ArticleApp-layout>
+</x-ArticleApp-Layout>

@@ -1,4 +1,4 @@
-<x-ArticleApp-layout>
+<x-ArticleApp-Layout>
     <div class="bg-gray-100 py-10">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Headmaster Section -->
@@ -49,4 +49,4 @@
             </div>
         </div>
     </div>
-</x-ArticleApp-layout>
+</x-ArticleApp-Layout>

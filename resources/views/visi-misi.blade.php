@@ -5,8 +5,8 @@
 
             <!-- Visi Section with Image and Content -->
             <div class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-6 w-full max-w-7xl mx-auto p-6 bg-white shadow-md rounded-lg items-center justify-center">
-                <img src="{{ asset('img/visi.png') }}" alt="Visi Design" class="w-full h-auto max-h-96 object-contain mb-6 lg:mb-0">
-                
+                <img src="{{ asset('img/Visi.png') }}" alt="Visi Design" class="w-full h-auto max-h-96 object-contain mb-6 lg:mb-0">
+
                 <!-- Visi Content -->
                 <div class="mt-6 lg:mt-0 text-center lg:text-left px-4">
                     <p class="text-2xl text-gray-600 leading-relaxed">
@@ -25,9 +25,9 @@
                         @endforeach
                     </ol>
                 </div>
-                
+
                 <!-- Canva Image for Misi -->
-                <img src="{{ asset('img/misi.png') }}" alt="Misi Design" class="w-full h-auto order-1 lg:order-2 max-h-96 object-contain mb-6 lg:mb-0">
+                <img src="{{ asset('img/Misi.png') }}" alt="Misi Design" class="w-full h-auto order-1 lg:order-2 max-h-96 object-contain mb-6 lg:mb-0">
             </div>
         </section>
     </x-slot>

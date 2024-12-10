@@ -1,4 +1,4 @@
-<x-ArticleApp-layout>
+<x-ArticleApp-Layout>
     <!-- main banner container -->
     <div class="mb-20 -mt-8 bg-green-200 py-20 relative">
         <img src="{{ asset('img/foto_sekolah.jpg') }}" alt="Background Image" class="absolute inset-0 w-full h-full object-cover opacity-60">
@@ -72,4 +72,4 @@
         <!--Script Buat Icons -->
         <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     </div>
-</x-ArticleApp-layout>
+</x-ArticleApp-Layout>

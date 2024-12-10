@@ -1,4 +1,4 @@
-<x-ArticleApp-layout>
+<x-ArticleApp-Layout>
     <body class="text-justify bg-gray-50">
 
     <div class="container mx-auto px-6 lg:px-20 py-10 flex flex-col lg:flex-row gap-10">
@@ -53,4 +53,4 @@
             @endif
         </div>
     </body>
-</x-ArticleApp-layout>
+</x-ArticleApp-Layout>
