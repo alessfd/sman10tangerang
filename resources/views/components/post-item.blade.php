@@ -2,7 +2,7 @@
     <!-- Article Image -->
     <a href="/article/{{ $post->slug }}" class="hover:opacity-75">
         @if (isset($post->thumbnail))
-            <img src="storage/{{ $post->thumbnail }}"class="w-full h-32 object-cover">
+            <img src="{{asset('storage/' . $post->thumbnail )}}"class="w-full h-32 object-cover">
         @else
             <img src="https://placeholder.pics/svg/600"class="w-full h-32 object-cover">
         @endif

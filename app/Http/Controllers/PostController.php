@@ -22,7 +22,7 @@ class PostController extends Controller
     {
         $posts = Post::query()
         ->where('active', '=', 1)
-        ->whereDate('published_At', '<=', date('Y-m-d'))
+        ->whereDate('published_at', '<=', date('Y-m-d'))
         ->orderBy('published_at', 'desc')
         ->paginate();
 
@@ -124,6 +124,9 @@ class PostController extends Controller
         return view('Alumni_gallery', compact('years'));
     }
 
+    //alumni app
+
+
     public function alumniapp($year)
     {
         $alumni = Alumni::query()
@@ -132,7 +135,7 @@ class PostController extends Controller
             })
             ->orderBy('id', 'asc')
             ->paginate(20);
-        return view('alumni', compact('alumni', 'year'));
+            return view('Alumni', compact('alumni', 'year'));
     }
 
     public function showFacilities()
