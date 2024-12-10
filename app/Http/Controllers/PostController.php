@@ -22,7 +22,7 @@ class PostController extends Controller
     {
         $posts = Post::query()
         ->where('active', '=', 1)
-        ->whereDate('published_At', '<=', date('Y-m-d'))
+        ->whereDate('published_at', '<=', date('Y-m-d'))
         ->orderBy('published_at', 'desc')
         ->paginate();
 
