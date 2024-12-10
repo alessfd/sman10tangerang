@@ -40,7 +40,7 @@
                             <img
                                 src="{{ asset('storage/' . $teacher->photo) }}"
                                 alt="{{ $teacher->name }}"
-                                class="h-full w-full object-cover rounded-full"
+                                class="h-full w-full object-cover rounded-lg"
                             />
                         </div>
                         <h3 class="font-semibold text-gray-800">{{ $teacher->name }}</h3>

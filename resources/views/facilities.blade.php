@@ -19,7 +19,7 @@
                             <!-- Teks -->
                             <div>
                                 <h3 class="text-3xl font-semibold  text-gray-800">{{ $facility->name }}</h3>
-                                <p class="text-lg text-gray-600 mt-4 max-w-4xl">{{ $facility->description }}</p>
+                                <p class="text-lg text-gray-600 mt-4 max-w-4xl text-justify">{{ $facility->description }}</p>
                                 <!--<p class="text-md text-gray-600 mt-2"><strong>Lokasi:</strong> {{ $facility->location }}</p>
                                 <p class="text-md text-gray-600"><strong>Kapasitas:</strong> {{ $facility->capacity }}</p>
                                 <p class="text-md text-gray-600"><strong>Status:</strong> {{ $facility->status }}</p>-->

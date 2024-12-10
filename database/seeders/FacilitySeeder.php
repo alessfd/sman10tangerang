@@ -25,7 +25,7 @@ class FacilitySeeder extends Seeder
                 'images' => 'Facility_photos/Lapangan_Sekolah.jpg'
             ],
             [
-                'name' => 'Labotarium Ipa',
+                'name' => 'Labotarium IPA',
                 'description' => 'Laboratorium IPA SMAN 10 Tangerang menyediakan fasilitas lengkap untuk mendukung praktik sains di bidang fisika, kimia, dan biologi. Dengan peralatan modern seperti mikroskop, bahan kimia, alat ukur, dan model anatomi, siswa dapat mempraktikkan teori yang dipelajari di kelas. Didukung oleh guru yang berpengalaman, laboratorium ini menjadi tempat siswa mengasah kemampuan analisis, observasi, dan eksperimen untuk memahami konsep ilmiah secara langsung.',
                 'images' => 'Facility_photos/Lab_Ipa.jpg'
             ],

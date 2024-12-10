@@ -15,6 +15,6 @@ class AlumniSeeder extends Seeder
      */
     public function run(): void
     {
-        AlumniYear::factory(5)->has(Alumni::factory(240))->create();
+        //AlumniYear::factory(5)->has(Alumni::factory(240))->create();
     }
 }
