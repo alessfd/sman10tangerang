@@ -42,14 +42,15 @@
                          class="absolute w-full h-full object-cover" alt="Slide {{ $index }}">
                 </div>
                 @endforeach
-            </div>
-
-            <!-- Slider indicators -->
+                <!-- Slider indicators -->
             <div class="absolute bottom-5 left-1/2 flex -translate-x-1/2 space-x-3 z-20">
                 @foreach (range(0, 4) as $index)
                 <button type="button" class="w-3 h-3 rounded-full" aria-label="Slide {{ $index + 1 }}" data-carousel-slide-to="{{ $index }}"></button>
                 @endforeach
             </div>
+            </div>
+
+            
 
             <div class="container mx-auto px-4 mt-8 text-center py-14">
                 <!-- Header Section -->
