@@ -30,42 +30,50 @@
                         </svg>
                     </button>
                     <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg p-4 mt-2 z-20 w-80">
-                        <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
-                            <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                <x-heroicon-o-academic-cap class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" />
+                        <a href="/profile">
+                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
+                                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                    <x-heroicon-o-academic-cap class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" />
+                                </div>
+                                <div class="flex-auto">
+                                    <p class="block font-semibold text-gray-900">Profil Sekolah</p>
+                                    <p class="mt-1 text-gray-600">Profil Guru dan Staf</p>
+                                </div>
                             </div>
-                            <div class="flex-auto">
-                                <a href="/profile" class="block font-semibold text-gray-900">Profil Sekolah</a>
-                                <p class="mt-1 text-gray-600">Profil Guru dan Staf</p>
+                        </a>
+                        <a href="/visi-misi">
+                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
+                                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                    <x-heroicon-o-magnifying-glass class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" />
+                                </div>
+                                <div class="flex-auto">
+                                    <p class="block font-semibold text-gray-900">Visi Misi</p>
+                                    <p class="mt-1 text-gray-600">Visi dan Misi Sekolah</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
-                            <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                <x-heroicon-o-magnifying-glass class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" />
+                        </a>
+                        <a href="/alumni">
+                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
+                                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                    <x-heroicon-o-user class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" />
+                                </div>
+                                <div class="flex-auto">
+                                    <p class="block font-semibold text-gray-900">Alumni</p>
+                                    <p class="mt-1 text-gray-600">Alumni Sekolah</p>
+                                </div>
                             </div>
-                            <div class="flex-auto">
-                                <a href="/visi-misi" class="block font-semibold text-gray-900">Visi Misi</a>
-                                <p class="mt-1 text-gray-600">Visi dan Misi Sekolah</p>
+                        </a>
+                        <a href="/facilities">
+                            <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
+                                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                    <x-heroicon-o-building-library class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" />
+                                </div>
+                                <div class="flex-auto">
+                                    <p class="block font-semibold text-gray-900">Fasilitas</p>
+                                    <p class="mt-1 text-gray-600">Fasilitas yang dimiliki</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
-                            <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                <x-heroicon-o-user class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" />
-                            </div>
-                            <div class="flex-auto">
-                                <a href="/alumni" class="block font-semibold text-gray-900">Alumni</a>
-                                <p class="mt-1 text-gray-600">Alumni Sekolah</p>
-                            </div>
-                        </div>
-                        <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
-                            <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                <x-heroicon-o-building-library class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" />
-                            </div>
-                            <div class="flex-auto">
-                                <a href="/facilities" class="block font-semibold text-gray-900">Fasilitas</a>
-                                <p class="mt-1 text-gray-600">Fasilitas yang dimiliki</p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <a href="/article" class="text-sm font-semibold text-gray-900">Berita</a>
@@ -117,7 +125,7 @@
             </div>
             <div>
                 <h3 class="text-lg font-semibold mb-3">Reach Us</h3>
-                <p class="text-sm">Jln. KH. Hasyim Ashari Gg. Sasak Poris Plawad Indah Cipondoh Kota Tangerang 15141</p>
+                <p class="text-sm">Jl. KH. Hasyim Ashari Gg. Sasak Poris Plawad Indah Cipondoh Kota Tangerang 15141</p>
                 <p class="text-sm">Email: info@sman10tangerang.sch.id</p>
                 <p class="text-sm">Telepon: (021) 123-4567</p>
             </div>

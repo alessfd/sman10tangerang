@@ -62,7 +62,7 @@ class PostController extends Controller
             ->limit(5) // Limit to 5 articles
             ->get();
 
-        return view('article', compact('post', 'otherArticles'));
+        return view('Article', compact('post', 'otherArticles'));
     }
 
 
@@ -112,7 +112,7 @@ class PostController extends Controller
         $headmaster = LectureProfile::where('jabatan', 'Kepala Sekolah')->first();
 
         $teachers = LectureProfile::where('jabatan', '!=', 'Kepala Sekolah')->get(); // Fetch teachers data
-        return view('profile', compact('headmaster', 'teachers'));
+        return view('Profile', compact('headmaster', 'teachers'));
     }
 
     public function alumni()

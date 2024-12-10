@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sman 10 Tangerang</title>
+    <title>SMAN 10 Tangerang</title>
     <meta name="description" content="">
 
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@
                 <!-- Slides -->
                 @foreach (range(1, 5) as $index)
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="{{ asset("img/home$index.jpg") }}" 
+                    <img src="{{ asset("img/home$index.jpg") }}"
                          class="absolute w-full h-full object-cover" alt="Slide {{ $index }}">
                 </div>
                 @endforeach
@@ -60,14 +60,14 @@
                     TANGERANG, INDONESIA
                 </h3>
                 <p class="text-lg md:text-2xl text-gray-700 leading-relaxed mx-auto max-w-9xl">
-                Selama bertahun-tahun, SMAN 10 Tangerang telah berdedikasi untuk mencetak generasi muda yang unggul, mandiri, dan berkarakter. 
-                Sebagai salah satu sekolah terkemuka di Tangerang, SMAN 10 menyediakan lingkungan belajar yang mendukung perkembangan intelektual, 
-                emosional, dan sosial siswa. Dengan fasilitas modern, program pembelajaran berbasis teknologi, dan berbagai kegiatan ekstrakurikuler, 
+                Selama bertahun-tahun, SMAN 10 Tangerang telah berdedikasi untuk mencetak generasi muda yang unggul, mandiri, dan berkarakter.
+                Sebagai salah satu sekolah terkemuka di Tangerang, SMAN 10 menyediakan lingkungan belajar yang mendukung perkembangan intelektual,
+                emosional, dan sosial siswa. Dengan fasilitas modern, program pembelajaran berbasis teknologi, dan berbagai kegiatan ekstrakurikuler,
                 SMAN 10 Tangerang memastikan setiap siswa siap menghadapi tantangan global sambil tetap menjunjung tinggi nilai-nilai lokal.
                 </p>
             </div>
 
-        
+
 
         <div class="container mx-auto px-4 mt-8">
             <section class="flex flex-col lg:flex-row lg:space-x-8">
@@ -81,8 +81,8 @@
                     <div class="bg-white shadow rounded-lg p-6">
                         <p class="text-xl font-bold mb-4">About Us</p>
                         <p class="text-justify text-gray-700 mb-4">
-                        Rasakan pengalaman belajar yang menyenangkan di SMAN 10 Tangerang! 
-                        Dengan lingkungan yang asri, fasilitas modern, dan lebih dari 50 kegiatan ekstrakurikuler, 
+                        Rasakan pengalaman belajar yang menyenangkan di SMAN 10 Tangerang!
+                        Dengan lingkungan yang asri, fasilitas modern, dan lebih dari 50 kegiatan ekstrakurikuler,
                         SMAN 10 mendukung pengembangan potensi siswa secara optimal. Bergabunglah untuk masa depan yang gemilang!
                         </p>
                         <a href="/contact" class="block text-center bg-blue-800 text-white font-bold text-sm uppercase rounded px-4 py-3 hover:bg-blue-700">Get to know us</a>
