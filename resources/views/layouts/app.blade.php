@@ -51,7 +51,23 @@
                 @endforeach
             </div>
 
-        </div>
+            <div class="container mx-auto px-4 mt-8 text-center py-14">
+                <!-- Header Section -->
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4">
+                    SMAN 10 TANGERANG
+                </h1>
+                <h3 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-4">
+                    TANGERANG, INDONESIA
+                </h3>
+                <p class="text-lg md:text-2xl text-gray-700 leading-relaxed mx-auto max-w-9xl">
+                Selama bertahun-tahun, SMAN 10 Tangerang telah berdedikasi untuk mencetak generasi muda yang unggul, mandiri, dan berkarakter. 
+                Sebagai salah satu sekolah terkemuka di Tangerang, SMAN 10 menyediakan lingkungan belajar yang mendukung perkembangan intelektual, 
+                emosional, dan sosial siswa. Dengan fasilitas modern, program pembelajaran berbasis teknologi, dan berbagai kegiatan ekstrakurikuler, 
+                SMAN 10 Tangerang memastikan setiap siswa siap menghadapi tantangan global sambil tetap menjunjung tinggi nilai-nilai lokal.
+                </p>
+            </div>
+
+        
 
         <div class="container mx-auto px-4 mt-8">
             <section class="flex flex-col lg:flex-row lg:space-x-8">
@@ -65,7 +81,9 @@
                     <div class="bg-white shadow rounded-lg p-6">
                         <p class="text-xl font-bold mb-4">About Us</p>
                         <p class="text-justify text-gray-700 mb-4">
-                            SMAN 10 Tangerang Selatan, established in 2006 with an "A" accreditation, is a top-tier school emphasizing academic excellence and character development...
+                        Rasakan pengalaman belajar yang menyenangkan di SMAN 10 Tangerang! 
+                        Dengan lingkungan yang asri, fasilitas modern, dan lebih dari 50 kegiatan ekstrakurikuler, 
+                        SMAN 10 mendukung pengembangan potensi siswa secara optimal. Bergabunglah untuk masa depan yang gemilang!
                         </p>
                         <a href="/contact" class="block text-center bg-blue-800 text-white font-bold text-sm uppercase rounded px-4 py-3 hover:bg-blue-700">Get to know us</a>
                     </div>
