@@ -40,5 +40,5 @@ class FacilitySeeder extends Seeder
                 'images' => 'Facility_photos/Perpustakaan.jpg'
             ]
             ]);
-}
-}
+        }
+    }

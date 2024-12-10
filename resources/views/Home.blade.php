@@ -2,7 +2,7 @@
     <x-slot name="slot">
         <!-- Facilities Section -->
         <div class="bg-white p-8 rounded-lg shadow-md mb-8">
-            <h2 class="text-3xl font-semibold text-gray-900 mb-4 text-center">Our Facilities</h2>
+            <h2 class="text-3xl font-semibold text-gray-900 mb-4 text-center">Fasilitas Kami</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 @foreach ($facilities->take(2) as $facility)
                     <div class="bg-gray-50 p-6 rounded-lg shadow-md">
@@ -23,7 +23,7 @@
     <x-slot name="page">
         <!-- Featured Posts Section -->
         @if ($posts->isEmpty())
-            <p class="text-center text-lg text-gray-600 mt-24">No posts available at the moment.</p>
+            <p class="text-center text-lg text-gray-600 mt-24">Tidak ada berita tersedia pada saat ini.</p>
         @else
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto max-w-7xl p-6">
                 @foreach ($posts->take(4) as $post)

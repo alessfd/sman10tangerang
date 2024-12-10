@@ -32,7 +32,7 @@ class AlumniResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(50),
                 Forms\Components\Select::make('angkatan')
                     ->required()
                     ->relationship("alumni_years", "year"),

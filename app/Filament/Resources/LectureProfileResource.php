@@ -31,15 +31,14 @@ class LectureProfileResource extends Resource
                 ->schema([
                     Forms\Components\TextInput::make('name')
                         ->required()
-                        ->maxLength(255),
+                        ->maxLength(50),
                     Forms\Components\TextInput::make('email')
                         ->email()
-                        ->required()
-                        ->maxLength(255),
+                        ->maxLength(50),
                     Forms\Components\TextInput::make('phone_number')
                         ->tel()
                         -> prefix('+62')
-                        ->maxLength(255)
+                        ->maxLength(15)
                         ->default(null),
                     Forms\Components\Textarea::make('address')
                         ->columnSpanFull(),
@@ -52,7 +51,7 @@ class LectureProfileResource extends Resource
                     Forms\Components\DatePicker::make('dob')
                         ->label("Tanggal Lahir"),
                     Forms\Components\TextInput::make('jabatan')
-                        ->maxLength(255)
+                        ->maxLength(30)
                         ->default(null),
                 ]) ->columnSpan(8),
 
