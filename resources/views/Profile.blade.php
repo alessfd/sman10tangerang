@@ -7,11 +7,11 @@
                     <!-- Headmaster Card -->
                     <div class="flex-shrink-0 w-full sm:w-48 lg:w-48 xl:w-60">
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden w-full">
-                            <div class="h-56 object-cover bg-gray-300 flex items-center justify-center">
+                            <div class="h-72 bg-gray-300 items-center justify-center">
                                 <img
                                     src="{{ asset('storage/' . $headmaster->photo) }}"
                                     alt="{{ $headmaster->name }}"
-                                    class="h-full w-full object-cover"
+                                    class="h-full w-full bject-fill"
                                 >
                             </div>
                             <div class="p-4 text-center">
@@ -36,11 +36,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 @foreach ($teachers as $teacher)
                     <div class="card bg-white shadow-md p-6 rounded-lg text-center">
-                        <div class="image-container h-40 w-40 mx-auto mb-4">
+                        <div class="image-container h-52 w-40 mx-auto mb-4">
                             <img
                                 src="{{ asset('storage/' . $teacher->photo) }}"
                                 alt="{{ $teacher->name }}"
-                                class="h-full w-full object-cover rounded-lg"
+                                class="h-full w-full object-fill rounded-lg"
                             />
                         </div>
                         <h3 class="font-semibold text-gray-800">{{ $teacher->name }}</h3>
