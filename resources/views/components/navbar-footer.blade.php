@@ -23,7 +23,7 @@
             <!-- Desktop Navigation -->
             <div class="hidden lg:flex lg:gap-x-12">
                 <div class="relative group">
-                    <button type="button" class="flex items-center gap-x-1 text-sm font-semibold text-gray-900" aria-expanded="false">
+                    <button type="button" class="flex items-center gap-x-1 text-lg font-semibold text-gray-900" aria-expanded="false">
                         Info
                         <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
@@ -76,24 +76,24 @@
                         </a>
                     </div>
                 </div>
-                <a href="/article" class="text-sm font-semibold text-gray-900">Berita</a>
-                <a href="http://154.41.229.66/login/index.php" target="_blank" class="text-sm font-semibold text-gray-900">Moodle</a>
-                <a href="http://116.197.131.41:2023/login" target="_blank" class="text-sm font-semibold text-gray-900">E-Raport</a>
-                <a href="/contact" class="text-sm font-semibold text-gray-900">Kontak</a>
+                <a href="/article" class="text-lg font-semibold text-gray-900">Berita</a>
+                <a href="http://154.41.229.66/login/index.php" target="_blank" class="text-lg font-semibold text-gray-900">Moodle</a>
+                <a href="http://116.197.131.41:2023/login" target="_blank" class="text-lg font-semibold text-gray-900">E-Raport</a>
+                <a href="/contact" class="text-lg font-semibold text-gray-900">Kontak</a>
             </div>
 
 
         </nav>
         <!-- Mobile Menu -->
         <div class="hidden lg:hidden mobile-nav bg-white shadow-lg w-full p-6" id="mobile-menu">
-            <a href="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profil</a>
-            <a href="/visi-misi" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Visi & Misi</a>
-            <a href="/alumni" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Alumni</a>
-            <a href="/facilities" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Fasilitas</a>
-            <a href="/article" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Berita</a>
-            <a href="http://154.41.229.66/login/index.php" target="_blank" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Moodle</a>
-            <a href="http://116.197.131.41:2023/login" target="_blank" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">E-Raport</a>
-            <a href="/contact" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Kontak</a>
+            <a href="/profile" class="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100">Profil</a>
+            <a href="/visi-misi" class="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100">Visi & Misi</a>
+            <a href="/alumni" class="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100">Alumni</a>
+            <a href="/facilities" class="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100">Fasilitas</a>
+            <a href="/article" class="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100">Berita</a>
+            <a href="http://154.41.229.66/login/index.php" target="_blank" class="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100">Moodle</a>
+            <a href="http://116.197.131.41:2023/login" target="_blank" class="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100">E-Raport</a>
+            <a href="/contact" class="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100">Kontak</a>
         </div>
     </header>
 
