@@ -7,7 +7,7 @@
                     <!-- Headmaster Card -->
                     <div class="flex-shrink-0 w-full sm:w-48 lg:w-48 xl:w-60">
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden w-full">
-                            <div class="h-48 bg-gray-300 flex items-center justify-center">
+                            <div class="h-56 object-cover bg-gray-300 flex items-center justify-center">
                                 <img
                                     src="{{ asset('storage/' . $headmaster->photo) }}"
                                     alt="{{ $headmaster->name }}"
