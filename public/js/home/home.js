@@ -30,8 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileNavMenu = document.querySelector('.mobile-nav');
 
 
-    const dropdownSocialButton = document.querySelector('.social-dropdown > button'); // Tombol untuk membuka dropdown
-    const  dropdownSocialMenu  = document.querySelector('.social-dropdown .absolute'); // Menu dropdown
 
     //Mobile Nav
     const productButton = document.querySelector('[aria-controls="disclosure-1"]');
@@ -60,26 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownMenu .addEventListener('mouseover', showinfoDropdown);
     dropdownMenu .addEventListener('mouseleave',  hideinfoDropdown);
 
-
-
-    let socialDropdownTimeout;
-
-    const showDropdownSocialMenu = () => {
-        clearTimeout(socialDropdownTimeout);
-        dropdownSocialMenu.classList.remove('hidden');
-    };
-
-    const hideDropdownSocialMenu = () => {
-        socialDropdownTimeout = setTimeout(() => {
-            dropdownSocialMenu.classList.add('hidden');
-        }, 100);
-    };
-
-    dropdownSocialButton.addEventListener('mouseover', showDropdownSocialMenu);
-    dropdownSocialButton.addEventListener('mouseleave', hideDropdownSocialMenu);
-
-    dropdownSocialMenu.addEventListener('mouseover', showDropdownSocialMenu);
-    dropdownSocialMenu.addEventListener('mouseleave', hideDropdownSocialMenu);
 
 
     closeButton.addEventListener('click', () => {

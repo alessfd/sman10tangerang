@@ -12,7 +12,7 @@ class ArticleAppLayout extends Component
      */
     public function __construct()
     {
-        //
+        //a
     }
 
     /**

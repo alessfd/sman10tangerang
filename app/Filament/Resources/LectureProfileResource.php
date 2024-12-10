@@ -64,7 +64,7 @@ class LectureProfileResource extends Resource
                         ->directory('teacher_photos')
                         ->default(null)
                         ->imageEditor()
-                        ->avatar()
+                        ->avatar(),
                     ]
                 ) ->columnSpan(4)
 
