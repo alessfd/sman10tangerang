@@ -30,6 +30,8 @@ class AlumniRelationImport implements ToModel, PersistRelations, WithHeadingRow,
     */
     public function model(array $row)
     {
+
+        dump($row);
         // Ambil atau buat tahun alumni
         $alumniYear = AlumniYear::firstOrCreate(
             ['year' => $this->year],
@@ -71,7 +73,7 @@ class AlumniRelationImport implements ToModel, PersistRelations, WithHeadingRow,
                 // Pastikan koordinat gambar cocok dengan baris data
                 $cellRow = (string) preg_replace('/[^\d]/', '', $coordinates); // Ekstrak nomor baris
 
-                $checkcell = 'A'.$cellRow;
+                $checkcell = 'B'.$cellRow;
 
                 if ($sheet->getCell($checkcell)->getValue() === $row['name']) {
                     $imageContents = file_get_contents($drawing->getPath());

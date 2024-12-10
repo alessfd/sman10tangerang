@@ -36,14 +36,6 @@ class PostController extends Controller
 
         return view('visi-misi', compact('profiles')); // Return the Visi Misi view
     }
-   
-    public function showFacilities()
-    {
-        $facilities = SchoolFacility::all();
-
-        // Mengirim data fasilitas ke view
-        return view('facilities', compact('facilities'));
-    }
 
     public function contact()
     {
@@ -78,21 +70,21 @@ class PostController extends Controller
         $query = Post::query()
             ->where('active', '=', 1)
             ->whereDate('published_at', '<=', now());
-    
+
         // Filter by categories
         if ($request->has('categories') && is_array($request->categories)) {
             $query->whereHas('categories', function ($q) use ($request) {
                 $q->whereIn('categories.id', $request->categories);
             });
         }
-    
+
         // Search by title
         if ($request->has('search') && $request->search) {
             $query->where('title', 'like', '%' . $request->search . '%');
         }
-    
+
         $posts = $query->orderBy('published_at', 'desc')->paginate(12);
-    
+
         return view('article_gallery', compact('categories', 'posts'));
     }
 
