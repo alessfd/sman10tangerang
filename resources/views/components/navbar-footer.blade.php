@@ -39,7 +39,7 @@
                 <a href="/article" class="text-sm font-semibold text-gray-900">Berita</a>
                 <a href="http://154.41.229.66/login/index.php" target="_blank" class="text-sm font-semibold text-gray-900">Moodle</a>
                 <a href="http://116.197.131.41:2023/login" target="_blank" class="text-sm font-semibold text-gray-900">E-Raport</a>
-                <a href="https://msha.ke/sman10kotatangerang" class="text-sm font-semibold text-gray-900">Sosial</a>
+                <a href="/contact" class="text-sm font-semibold text-gray-900">Kontak</a>
             </div>
         </nav>
         <!-- Mobile Menu -->
