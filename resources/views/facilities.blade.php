@@ -12,7 +12,7 @@
                             <!-- Gambar -->
                             <div class="flex-shrink-0">
                                 <div class="flex flex-wrap gap-4">
-                                    <img src="{{  asset('storage/' . $facility->images)  }}" alt="Facility Image" class="w-80 h-60 object-cover rounded-lg shadow-md">
+                                    <img src="{{  asset('storage/' . $facility->images)  }}" alt="Facility Image" class="w-76 h-60 object-cover rounded-lg shadow-md">
                                 </div>
                             </div>
 
