@@ -36,8 +36,12 @@ class AlumniImport implements ToModel, PersistRelations, WithHeadingRow, WithSki
         // Simpan gambar dari Excel jika ada
         $photoPath = $this->extractPhoto($row);
 
+
+
+
         // Simpan data alumni
         $alumni = new Alumni([
+            "id" => $row["nis"],
             'name' => $row["name"],
             'alumni_year_id' => $alumniYear->id,
             'photo' => $photoPath,
@@ -71,7 +75,7 @@ class AlumniImport implements ToModel, PersistRelations, WithHeadingRow, WithSki
                 // Pastikan koordinat gambar cocok dengan baris data
                 $cellRow = (string) preg_replace('/[^\d]/', '', $coordinates); // Ekstrak nomor baris
 
-                $checkcell = 'A'.$cellRow;
+                $checkcell = 'B'.$cellRow;
 
                 if ($sheet->getCell($checkcell)->getValue() === $row['name']) {
                     $imageContents = file_get_contents($drawing->getPath());

@@ -14,6 +14,7 @@ class Alumni extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'name',
         'photo',
         'alumni_year_id'
