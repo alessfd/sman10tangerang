@@ -31,12 +31,12 @@ class SchoolFacilityResource extends Resource
                     ->schema([
                         Forms\Components\TextInput::make('name')
                             ->required()
-                            ->maxLength(255),
+                            ->maxLength(50),
                         Grid::make(2)
                             ->schema(
                             [
                                 Forms\Components\TextInput::make('location')
-                                    ->maxLength(255)
+                                    ->maxLength(30)
                                     ->default(null),
                                 Forms\Components\TextInput::make('capacity')
                                     ->numeric()

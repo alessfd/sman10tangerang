@@ -1,22 +1,35 @@
 <x-articleapp-layout>
-    <body>
+    <body class="bg-gray-50">
+
+        <div class="bg-green-600 text-white py-6">
+            <div class="container text-center mx-auto px-6 lg:px-20">
+                <h1 class="text-2xl md:text-3xl font-bold">BERITA SMAN 10 TANGERANG</h1>
+            </div>
+        </div>
+
         @if ($posts->isEmpty())
-                <!-- No Posts Available Message -->
-                <p class="text-center text-lg text-gray-600 mt-24">No posts available at the moment.</p>
+        <!-- No Posts Available Message -->
+        <div class="text-center py-20">
+            <p class="text-lg font-medium text-gray-600">Tidak ada berita tersedia pada saat ini.</p>
+        </div>
         @else
-            <div class="flex items-center justify-between px-10 lg:px-20 mt-6">
+        <!-- Page Title -->
+
+        <div class="container mx-auto px-6 lg:px-20 py-10">
+            <!-- Filter and Search -->
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
                 <!-- Filter Button -->
                 <button id="toggleFilter" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
                     Filter
                 </button>
 
                 <!-- Search Bar -->
-                <form method="GET" action="{{ route('article') }}" class="flex items-center">
+                <form method="GET" action="{{ route('article') }}" class="flex items-center w-full lg:w-auto">
                     <input
                         type="text"
                         name="search"
                         placeholder="Search articles..."
-                        class="border border-gray-300 rounded-l px-4 py-2 focus:outline-none focus:ring focus:border-blue-300"
+                        class="border border-gray-300 rounded-l px-4 py-2 w-full lg:w-auto focus:outline-none focus:ring focus:border-blue-300"
                         value="{{ request('search') }}"
                     >
                     <button
@@ -28,20 +41,20 @@
             </div>
 
             <!-- Filter Options -->
-            <div id="filterOptions" class="hidden mt-4 px-10 lg:px-20">
+            <div id="filterOptions" class="hidden mt-4">
                 <form method="GET" action="{{ route('article') }}">
                     <div class="flex flex-wrap gap-4">
                         @foreach ($categories as $category)
-                            <label class="inline-flex items-center">
-                                <input
-                                    type="checkbox"
-                                    name="categories[]"
-                                    value="{{ $category->id }}"
-                                    class="form-checkbox h-5 w-5 text-blue-600"
-                                    {{ in_array($category->id, request('categories', [])) ? 'checked' : '' }}
-                                >
-                                <span class="ml-2 text-gray-700">{{ $category->title }}</span>
-                            </label>
+                        <label class="inline-flex items-center">
+                            <input
+                                type="checkbox"
+                                name="categories[]"
+                                value="{{ $category->id }}"
+                                class="form-checkbox h-5 w-5 text-blue-600"
+                                {{ in_array($category->id, request('categories', [])) ? 'checked' : '' }}
+                            >
+                            <span class="ml-2 text-gray-700">{{ $category->title }}</span>
+                        </label>
                         @endforeach
                     </div>
                     <div class="mt-4">
@@ -54,19 +67,18 @@
                 </form>
             </div>
 
-            <!-- Articles -->
-            <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-10 lg:px-20">
+            <!-- Articles Grid -->
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8">
                 @foreach ($posts as $post)
-                    <div>
-                        <x-post-item :post="$post"></x-post-item>
-                    </div>
+                <x-post-item :post="$post"></x-post-item>
                 @endforeach
             </div>
 
             <!-- Pagination -->
-            <div class="mt-6 px-10 lg:px-20">
+            <div class="mt-10">
                 {{ $posts->withQueryString()->links() }}
             </div>
+        </div>
         @endif
     </body>
 
@@ -74,13 +86,7 @@
     <script>
         document.getElementById('toggleFilter').addEventListener('click', function () {
             const filterOptions = document.getElementById('filterOptions');
-            if (filterOptions.classList.contains('hidden')) {
-                filterOptions.classList.remove('hidden');
-                filterOptions.classList.add('animate__animated', 'animate__fadeInDown');
-            } else {
-                filterOptions.classList.add('hidden');
-                filterOptions.classList.remove('animate__animated', 'animate__fadeInDown');
-            }
+            filterOptions.classList.toggle('hidden');
         });
     </script>
 </x-articleapp-layout>
