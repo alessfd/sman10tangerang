@@ -1,4 +1,4 @@
-<x-articleapp-layout>
+<x-ArticleApp-layout>
     <body>
         <div class="w-3/5 mt-6 mx-auto">
             <a href="/alumni">Alumni</a> > <a>{{ $year }}</a>
@@ -18,4 +18,4 @@
             </div>
         </div>
     </body>
-</x-articleapp-layout>
+</x-ArticleApp-layout>

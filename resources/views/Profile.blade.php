@@ -1,4 +1,4 @@
-<x-articleapp-layout>
+<x-ArticleApp-layout>
     <div class="bg-gray-100 py-10">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Headmaster Section -->
@@ -8,9 +8,9 @@
                     <div class="flex-shrink-0 w-full sm:w-48 lg:w-48 xl:w-60">
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden w-full">
                             <div class="h-48 bg-gray-300 flex items-center justify-center">
-                                <img 
-                                    src="{{ asset('storage/' . $headmaster->photo) }}" 
-                                    alt="{{ $headmaster->name }}" 
+                                <img
+                                    src="{{ asset('storage/' . $headmaster->photo) }}"
+                                    alt="{{ $headmaster->name }}"
                                     class="h-full w-full object-cover"
                                 >
                             </div>
@@ -37,9 +37,9 @@
                 @foreach ($teachers as $teacher)
                     <div class="card bg-white shadow-md p-6 rounded-lg text-center">
                         <div class="image-container h-40 w-40 mx-auto mb-4">
-                            <img 
-                                src="{{ asset('storage/' . $teacher->photo) }}" 
-                                alt="{{ $teacher->name }}" 
+                            <img
+                                src="{{ asset('storage/' . $teacher->photo) }}"
+                                alt="{{ $teacher->name }}"
                                 class="h-full w-full object-cover rounded-full"
                             />
                         </div>
@@ -49,4 +49,4 @@
             </div>
         </div>
     </div>
-</x-articleapp-layout>
+</x-ArticleApp-layout>

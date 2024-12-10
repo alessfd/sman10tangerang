@@ -1,4 +1,4 @@
-<x-articleapp-layout>
+<x-ArticleApp-layout>
     <body class="bg-gray-50">
 
         <div class="bg-green-600 text-white py-6">
@@ -89,4 +89,4 @@
             filterOptions.classList.toggle('hidden');
         });
     </script>
-</x-articleapp-layout>
+</x-ArticleApp-layout>

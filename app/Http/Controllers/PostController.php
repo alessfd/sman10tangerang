@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Alumni;
 use App\Models\AlumniYear;
-use App\Models\post;
+use App\Models\Post;
 use App\Models\Category;
 use App\Models\SchoolProfile;
 use Carbon\Carbon;
@@ -28,7 +28,7 @@ class PostController extends Controller
 
         $facilities = SchoolFacility::take(2)->get();
 
-        return view('home', compact('posts', 'facilities'));
+        return view('Home', compact('posts', 'facilities'));
     }
 
     public function visiMisi()
@@ -38,7 +38,7 @@ class PostController extends Controller
 
         return view('visi-misi', compact('profiles')); // Return the Visi Misi view
     }
-   
+
 
     public function contact()
     {
@@ -73,22 +73,22 @@ class PostController extends Controller
         $query = Post::query()
             ->where('active', '=', 1)
             ->whereDate('published_at', '<=', now());
-    
+
         // Filter by categories
         if ($request->has('categories') && is_array($request->categories)) {
             $query->whereHas('categories', function ($q) use ($request) {
                 $q->whereIn('categories.id', $request->categories);
             });
         }
-    
+
         // Search by title
         if ($request->has('search') && $request->search) {
             $query->where('title', 'like', '%' . $request->search . '%');
         }
-    
+
         $posts = $query->orderBy('published_at', 'desc')->paginate(12);
-    
-        return view('article_gallery', compact('categories', 'posts'));
+
+        return view('Article_gallery', compact('categories', 'posts'));
     }
 
     // public function profile()
@@ -121,7 +121,7 @@ class PostController extends Controller
             ->orderBy('year', 'desc')
             ->paginate();
 
-        return view('alumni_gallery', compact('years'));
+        return view('Alumni_gallery', compact('years'));
     }
 
     public function alumniapp($year)

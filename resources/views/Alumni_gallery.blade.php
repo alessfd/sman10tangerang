@@ -1,4 +1,4 @@
-<x-articleapp-layout>
+<x-ArticleApp-layout>
     <div class="bg-green-600 text-white py-6">
         <div class="container text-center mx-auto px-6 lg:px-20">
             <h1 class="text-2xl md:text-3xl font-bold">ALUMNI SMAN 10 TANGERANG</h1>
@@ -17,4 +17,4 @@
             </div>
         </body>
     @endif
-</x-articleapp-layout>
+</x-ArticleApp-layout>

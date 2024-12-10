@@ -1,4 +1,4 @@
-<x-articleapp-layout>
+<x-ArticleApp-layout>
     <body class="text-justify bg-gray-50">
 
     <div class="container mx-auto px-6 lg:px-20 py-10 flex flex-col lg:flex-row gap-10">
@@ -12,7 +12,7 @@
                 </p>
 
                 @if(isset($post->thumbnail))
-                <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}" 
+                <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}"
                     class="w-full max-h-[50vh] object-cover rounded-lg mt-6">
                 @endif
 
@@ -31,13 +31,13 @@
                         @foreach ($otherArticles as $otherArticle)
                         <div class="bg-gray-100 p-4 rounded-lg flex gap-4 hover:bg-gray-200">
                             <!-- Thumbnail -->
-                            <img src="{{ asset('storage/' . $otherArticle->thumbnail) }}" 
-                                alt="{{ $otherArticle->title }}" 
+                            <img src="{{ asset('storage/' . $otherArticle->thumbnail) }}"
+                                alt="{{ $otherArticle->title }}"
                                 class="w-20 h-20 object-cover rounded-lg shadow">
 
                             <!-- Article Info -->
                             <div class="flex flex-col justify-between">
-                                <a href="{{ route('articleapp', $otherArticle->slug) }}" 
+                                <a href="{{ route('articleapp', $otherArticle->slug) }}"
                                     class="text-blue-600 font-semibold hover:underline">
                                     {{ $otherArticle->title }}
                                 </a>
@@ -53,4 +53,4 @@
             @endif
         </div>
     </body>
-</x-articleapp-layout>
+</x-ArticleApp-layout>

@@ -1,4 +1,4 @@
-<x-articleapp-layout>
+<x-ArticleApp-layout>
     <!-- main banner container -->
     <div class="mb-20 -mt-8 bg-green-200 py-20 relative">
         <img src="{{ asset('img/foto_sekolah.jpg') }}" alt="Background Image" class="absolute inset-0 w-full h-full object-cover opacity-60">
@@ -19,7 +19,7 @@
                 <p class="text-xl font-bold text-gray-800">+62 21-554-9370</p>
                 <p class="text-gray-600 mt-2">Senin - Jum'at: 8:00 - 17:00</p>
             </div>
-            
+
             <!-- Email Section -->
             <div class="text-center">
                 <div class="flex items-center justify-center mb-4">
@@ -31,7 +31,7 @@
                 <p class="text-xl font-bold text-gray-800">kotatangerang.sch.id</p>
                 <p class="text-gray-600 mt-2">Email pertanyaan</p>
             </div>
-            
+
             <!-- Address Section -->
             <a href="https://maps.app.goo.gl/G5DwscKBRhxMi6FK8" class="text-center cursor-pointer">
                 <div class="flex items-center justify-center mb-4">
@@ -44,7 +44,7 @@
             </a>
         </div>
     </div>
-    
+
     <!-- form container
     <!-- social media -->
     <div class="pb-24 flex flex-col items-center">
@@ -72,4 +72,4 @@
         <!--Script Buat Icons -->
         <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     </div>
-</x-articleapp-layout>
+</x-ArticleApp-layout>
