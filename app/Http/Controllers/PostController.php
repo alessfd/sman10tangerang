@@ -132,7 +132,7 @@ class PostController extends Controller
             })
             ->orderBy('id', 'asc')
             ->paginate(20);
-        return view('alumni', compact('alumni', 'year'));
+        return view('Alumni', compact('alumni', 'year'));
     }
 
     public function showFacilities()
