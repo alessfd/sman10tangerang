@@ -60,7 +60,7 @@ class AlumniRelationImport implements ToModel, PersistRelations, WithHeadingRow,
      */
     protected function extractPhoto(array $row)
     {
-        $filePath = 'D:/GIT/sman10tangerang/storage/app/private/'. $this -> filePath;
+        $filePath = storage_path('app/private/') . $this -> filePath;
         $spreadsheet = IOFactory::load($filePath);
         $sheet = $spreadsheet->getActiveSheet();
         $drawings = $sheet->getDrawingCollection();
