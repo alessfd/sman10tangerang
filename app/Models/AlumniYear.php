@@ -12,7 +12,7 @@ class AlumniYear extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['year'];
+    protected $fillable = ['year', 'photo'];
 
     public function alumnis(): HasMany
     {

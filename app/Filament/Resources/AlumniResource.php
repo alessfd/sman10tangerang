@@ -13,6 +13,8 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Grid;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -30,13 +32,27 @@ class AlumniResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                Section::make()
+                ->schema([
+                    Forms\Components\TextInput::make('id')
+                    ->label("NIS")
                     ->required()
-                    ->maxLength(50),
-                Forms\Components\Select::make('angkatan')
-                    ->required()
-                    ->relationship("alumni_years", "year"),
-                Forms\Components\Section::make()
+                    ->maxLength(14),
+                    Grid::make(2)
+                        ->schema(
+                        [
+                            Forms\Components\TextInput::make('name')
+                            ->required()
+                            ->maxLength(50),
+                        Forms\Components\Select::make('angkatan')
+                            ->required()
+                            ->relationship("alumni_years", "year"),
+                        ]
+                    ),
+                ])->columnSpan(8),
+                Section::make()
+                ->schema([
+                    Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\FileUpload::make('photo')
                             ->image()
@@ -44,13 +60,17 @@ class AlumniResource extends Resource
                             ->imageEditor()
                             ->directory('alumnigallery'),
                     ]),
-            ]);
+                ])->columnSpan(4)
+        ]) ->columns(12);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
