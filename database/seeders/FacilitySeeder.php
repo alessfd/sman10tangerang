@@ -21,7 +21,7 @@ class FacilitySeeder extends Seeder
         DB::table('school_facilities')->insert( [
             [
                 'name' => 'Lapangan Olahraga',
-                'description' => 'Lapangan olahraga di SMAN 10 Tanggerang merupakan fasilitas yang dirancang untuk mendukung kegiatan fisik dan pengembangan karakter siswa. Dengan desain serbaguna, lapangan ini dapat digunakan untuk berbagai olahraga seperti sepak bola, bola basket, voli, dan aktivitas atletik lainnya. Lapangan ini tidak hanya menjadi tempat pembelajaran olahraga, tetapi juga wadah untuk kegiatan ekstrakurikuler, kompetisi antar sekolah, serta mendukung kesehatan dan kebugaran siswa. Kami percaya bahwa fasilitas ini dapat memberikan pengalaman belajar yang menyenangkan sekaligus membangun jiwa sportivitas dan kerja sama tim.',
+                'description' => 'Lapangan olahraga di SMAN 10 Tanggerang merupakan fasilitas yang dirancang untuk mendukung kegiatan fisik dan pengembangan karakter siswa. Lapangan ini tidak hanya menjadi tempat pembelajaran olahraga, tetapi juga wadah untuk kegiatan ekstrakurikuler, kompetisi antar sekolah, serta mendukung kesehatan dan kebugaran siswa. Kami percaya bahwa fasilitas ini dapat memberikan pengalaman belajar yang menyenangkan sekaligus membangun jiwa sportivitas dan kerja sama tim.',
                 'images' => 'Facility_photos/Lapangan_Sekolah.jpg'
             ],
             [
