@@ -25,6 +25,10 @@ class AlumnisRelationManager extends RelationManager
     {
         return $form
             ->schema([
+                Forms\Components\TextInput::make('id')
+                    ->label("NIS")
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),

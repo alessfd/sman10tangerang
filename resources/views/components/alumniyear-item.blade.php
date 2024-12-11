@@ -6,9 +6,9 @@
             @else
                 <img src="{{ asset('/img/background-alumni.jpeg') }}"class="w-full object-cover">
             @endif
-        </a>
-        <a class="text-3xl font-bold hover:text-gray-700 pb-4 text-center">
-            {{ $year->year }}
+            <a class="text-3xl font-bold hover:text-gray-700 pb-4 text-center" href="/alumni/{{ $year->year }}">
+                {{ $year->year }}
+            </a>
         </a>
     </div>
 </div>
