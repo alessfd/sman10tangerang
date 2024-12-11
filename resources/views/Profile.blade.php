@@ -3,9 +3,9 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Headmaster Section -->
             <div class="mb-10">
-                <div class="flex flex-wrap lg:flex-nowrap items-center gap-6">
+                <div class="flex flex-wrap lg:flex-nowrap items-center justify-center gap-6">
                     <!-- Headmaster Card -->
-                    <div class="flex-shrink-0 w-full sm:w-48 lg:w-48 xl:w-60">
+                    <div class="flex-shrink-0 w-fit">
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden w-full">
                             <div class="h-72 bg-gray-300 items-center justify-center">
                                 <img

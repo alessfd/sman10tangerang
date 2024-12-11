@@ -8,7 +8,7 @@
     </div>
 
     <!-- Contact Info Container -->
-    <div class="mb-20 flex justify-center items-center px-4 ml-auto md:pl-24 lg:pl-36">
+    <div class="mb-20 flex justify-center items-center mx-auto">
         <div class="flex flex-col md:flex-row md:space-x-16 space-y-12 md:space-y-0">
             <div class="text-center">
                 <div class="flex items-center justify-center mb-4">
@@ -18,18 +18,6 @@
                 </div>
                 <p class="text-xl font-bold text-gray-800">+62 21-554-9370</p>
                 <p class="text-gray-600 mt-2">Senin - Jum'at: 8:00 - 17:00</p>
-            </div>
-
-            <!-- Email Section -->
-            <div class="text-center">
-                <div class="flex items-center justify-center mb-4">
-                    <div class="w-24 h-24 flex items-center justify-center">
-                        <i class="fas fa-envelope text-4xl text-green-500"></i>
-                    </div>
-                </div>
-                <p class="text-xl font-bold text-gray-800">admin@sman10</p>
-                <p class="text-xl font-bold text-gray-800">kotatangerang.sch.id</p>
-                <p class="text-gray-600 mt-2">Email pertanyaan</p>
             </div>
 
             <!-- Address Section -->
@@ -42,6 +30,18 @@
                 <p class="w-46 lg:w-80 text-xl font-bold text-gray-800">Jl. Raya Cipondoh, Poris Plawad Indah, Kota Tangerang, Banten</p>
                 <p class="text-gray-600 mt-2">Klik untuk buka map</p>
             </a>
+
+            <!-- Email Section -->
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="w-24 h-24 flex items-center justify-center">
+                        <i class="fas fa-envelope text-4xl text-green-500"></i>
+                    </div>
+                </div>
+                <p class="text-xl font-bold text-gray-800">admin@sman10</p>
+                <p class="text-xl font-bold text-gray-800">kotatangerang.sch.id</p>
+                <p class="text-gray-600 mt-2">Email pertanyaan</p>
+            </div>
         </div>
     </div>
 
