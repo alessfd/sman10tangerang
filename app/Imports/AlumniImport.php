@@ -33,6 +33,8 @@ class AlumniImport implements ToModel, PersistRelations, WithHeadingRow, WithSki
             ['year' => $row['angkatan']]
         );
 
+        dump($row);
+
         // Simpan gambar dari Excel jika ada
         $photoPath = $this->extractPhoto($row);
 

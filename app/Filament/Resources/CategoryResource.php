@@ -33,7 +33,8 @@ class CategoryResource extends Resource
                     -> live( debounce: 500, onBlur:True)
                     ->afterStateUpdated(function($set, $state) {
                         $set('slug', Str::slug($state));
-                    }),
+                    })
+                    ->unique(),
                 Forms\Components\TextInput::make('slug')
                     ->required()
                     ->maxLength(2048),

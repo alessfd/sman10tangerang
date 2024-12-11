@@ -56,9 +56,8 @@ class SchoolFacilityResource extends Resource
                     ->schema([
                         Forms\Components\FileUpload::make("images")
                             ->image()
-                            ->multiple()
                             ->disk('public')
-                            ->directory('Facility'),
+                            ->directory('Facility_photos'),
                     ])->columnSpan(4)
             ]) ->columns(12);
     }

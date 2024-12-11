@@ -33,7 +33,8 @@ class AlumniYearResource extends Resource
                     -> numeric()
                     ->required()
                     ->minValue(2000)
-                    ->maxValue(now()->format('Y')),
+                    ->maxValue(now()->format('Y'))
+                    ->unique(),
                 Forms\Components\FileUpload::make('photo')
                     ->image()
                     ->disk('public')

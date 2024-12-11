@@ -37,14 +37,15 @@ class AlumniResource extends Resource
                     Forms\Components\TextInput::make('id')
                     ->label("NIS")
                     ->required()
-                    ->maxLength(14),
+                    ->maxLength(14)
+                    ->unique(),
                     Grid::make(2)
                         ->schema(
                         [
                             Forms\Components\TextInput::make('name')
                             ->required()
                             ->maxLength(50),
-                        Forms\Components\Select::make('angkatan')
+                        Forms\Components\Select::make('alumni_year_id')
                             ->required()
                             ->relationship("alumni_years", "year"),
                         ]
@@ -70,7 +71,7 @@ class AlumniResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('id')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable(),                
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->sortable(),

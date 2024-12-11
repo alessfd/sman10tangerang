@@ -1,7 +1,7 @@
 <div class="group relative min-w-96 shadow-md bg-white rounded-lg overflow-hidden">
     <!-- Image -->
     @if (isset($alumni->photo))
-        <img src="storage/{{ $alumni->photo }}"class="w-full object-cover">
+        <img src="{{asset('storage/'. $alumni->photo) }}"class="w-full object-cover">
     @else
         <img src="{{ asset('/img/avatar.jpg') }}"class="w-full object-cover">
     @endif
