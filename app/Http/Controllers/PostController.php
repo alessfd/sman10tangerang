@@ -44,7 +44,7 @@ class PostController extends Controller
     public function article(Request $request)
     {
         $categories = Category::all();
-
+        dump(now());
         $query = Post::query()
             ->where('active', '=', 1)
             ->whereDate('published_at', '<=', now());

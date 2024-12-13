@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('alumni_years', function (Blueprint $table) {
             $table->id();
             $table->year("year");
-            $table->string("photo");
+            $table->string("photo") -> nullable();
             $table->timestamps();
         });
     }

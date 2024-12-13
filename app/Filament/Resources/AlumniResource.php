@@ -38,6 +38,7 @@ class AlumniResource extends Resource
                     ->label("NIS")
                     ->required()
                     ->maxLength(14)
+                    ->regex('/^[0-9]*$/')
                     ->unique(
                         ignorable: fn ($record) => $record
                     ),

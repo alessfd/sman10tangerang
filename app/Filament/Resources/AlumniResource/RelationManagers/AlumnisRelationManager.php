@@ -28,7 +28,8 @@ class AlumnisRelationManager extends RelationManager
                 Forms\Components\TextInput::make('id')
                     ->label("NIS")
                     ->required()
-                    ->maxLength(255),
+                    ->regex('/^[0-9]*$/')
+                    ->maxLength(14),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
