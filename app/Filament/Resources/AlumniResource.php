@@ -61,7 +61,10 @@ class AlumniResource extends Resource
                             ->image()
                             ->disk('public')
                             ->imageEditor()
-                            ->directory('alumnigallery'),
+                            ->directory('alumnigallery')
+                            ->imageCropAspectRatio('10:13')
+                            ->imageResizeTargetWidth('200')
+                            ->imageResizeTargetHeight('260'),
                     ]),
                 ])->columnSpan(4)
         ]) ->columns(12);

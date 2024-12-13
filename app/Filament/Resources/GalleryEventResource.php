@@ -36,7 +36,10 @@ class GalleryEventResource extends Resource
                         ->disk('public')
                         ->reorderable()
                         ->directory('alumnievent')
-                        ->imageEditor(),
+                        ->imageEditor()
+                        ->imageCropAspectRatio('16:9')
+                        ->imageResizeTargetWidth('900')
+                        ->imageResizeTargetHeight('506.25'),
 
                     Forms\Components\TextArea::make('description')
                         ->required()

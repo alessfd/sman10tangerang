@@ -65,7 +65,11 @@ class PostResource extends Resource
                         ->image()
                         ->disk('public')
                         ->directory('thumbnail')
-                        ->imageEditor(),
+                        ->imageEditor()
+                        ->imageResizeMode('contain')
+                        ->imageCropAspectRatio('16:9')
+                        ->imageResizeTargetWidth('900')
+                        ->imageResizeTargetHeight('506.25'),
                     Forms\Components\Select::make('categories')
                         ->multiple()
                         ->relationship('categories', 'title')
