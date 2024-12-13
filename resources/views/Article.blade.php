@@ -3,7 +3,9 @@
 
     <div class="container mx-auto px-6 lg:px-20 py-10 flex flex-col lg:flex-row gap-10">
             <!-- Main Content -->
-            <div class="lg:w-3/4 bg-white p-6 rounded-lg shadow-lg">
+            <div class="lg:w-3/4">
+            <a href="/article">Article</a> > <a>Detail</a>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
                 <h1 class="text-3xl font-extrabold leading-tight text-gray-900 md:text-4xl lg:text-3xl">
                     {{ $post->title }}
                 </h1>
@@ -20,10 +22,11 @@
                     {!! $post->body !!}
                 </div>
             </div>
+            </div>
 
             <!-- Sidebar -->
             @if($otherArticles->count() > 0)
-            <div class="lg:w-1/4">
+            <div class="lg:w-1/4 col-span-1">
                 <!-- Other Articles -->
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <h2 class="text-xl font-bold text-gray-900 mb-4">Berita Lainnya</h2>
@@ -37,7 +40,7 @@
 
                             <!-- Article Info -->
                             <div class="flex flex-col justify-between">
-                                <a href="{{ route('articleapp', $otherArticle->slug) }}"
+                                <a href="{{ route('articleapp', ['date' => $otherArticle->published_at->format('Y-m-d'), 'slug' => $otherArticle->slug]) }}"
                                     class="text-blue-600 font-semibold hover:underline">
                                     {{ $otherArticle->title }}
                                 </a>

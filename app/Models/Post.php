@@ -21,6 +21,10 @@ class Post extends Model
         'user_id',
     ];
 
+    protected $casts = [
+        'published_at' => 'datetime',
+    ];
+
     protected static function booted()
     {
         static::deleting(function ($post) {

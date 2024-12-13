@@ -15,44 +15,19 @@ use App\Models\LectureProfile;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+
+
+
+    public function articleapp(string $date,string $slug)
     {
-        $posts = Post::query()
-        ->where('active', '=', 1)
-        ->whereDate('published_at', '<=', date('Y-m-d'))
-        ->orderBy('published_at', 'desc')
-        ->paginate();
-
-        $facilities = SchoolFacility::take(2)->get();
-
-        return view('Home', compact('posts', 'facilities'));
-    }
-
-    public function visiMisi()
-    {
-        $profiles = SchoolProfile::query()
-        ->first();
-
-        return view('visi-misi', compact('profiles')); // Return the Visi Misi view
-    }
-
-
-    public function contact()
-    {
-        // Return the 'contact' view
-        return view('contact');  // Assumes there's a contact.blade.php in resources/views
-    }
-
-    public function articleapp($slug)
-    {
+        $formattedDate = date('Y-m-d', strtotime($date));
         $post = Post::query()
             ->where('active', '=', 1)
             ->whereDate('published_at', '<=', date('Y-m-d'))
             ->where('slug', $slug)
+            ->whereDate('published_at', $formattedDate)
             ->firstOrFail();
+
 
         $otherArticles = Post::query()
             ->where('active', '=', 1)
@@ -91,60 +66,6 @@ class PostController extends Controller
         return view('Article_gallery', compact('categories', 'posts'));
     }
 
-    // public function profile()
-    // {
-    //     // Placeholder data: Replace with real teacher data later
-    //     $teachers = collect(range(1, 8))->map(function ($i) {
-    //         return [
-    //             'id' => $i,
-    //             'name' => "Teacher $i",
-    //             'subject' => "Subject $i",
-    //             'bio' => "This is a placeholder bio for teacher $i. Real data will be added later.",
-    //             'image' => 'https://via.placeholder.com/150', // Placeholder image
-    //         ];
-    //     });
-
-    //     return view('profile');
-    // }
-
-    public function Profile()
-    {
-        $headmaster = LectureProfile::where('jabatan', 'Kepala Sekolah')->first();
-
-        $teachers = LectureProfile::where('jabatan', '!=', 'Kepala Sekolah')->get(); // Fetch teachers data
-        return view('Profile', compact('headmaster', 'teachers'));
-    }
-
-    public function alumni()
-    {
-        $years = AlumniYear::query()
-            ->orderBy('year', 'desc')
-            ->paginate();
-
-        return view('Alumni_gallery', compact('years'));
-    }
-
-    //alumni app
-
-
-    public function alumniapp($year)
-    {
-        $alumni = Alumni::query()
-            ->whereHas('alumni_years', function ($query) use ($year) {
-                $query->where('year', $year);
-            })
-            ->orderBy('id', 'asc')
-            ->paginate(20);
-            return view('Alumni', compact('alumni', 'year'));
-    }
-
-    public function showFacilities()
-    {
-        $facilities = SchoolFacility::all();
-
-        // Mengirim data fasilitas ke view
-        return view('facilities', compact('facilities'));
-    }
 
     // select * from `alumni_years` where `alumni_years`.`id` in (15067633, 438190617, 670416382, 957630562, 1710267075, 3129621783, 3299072320, 3444747313, 4233683750, 4290800802, 4324629166, 4328649606, 4844513746, 5181285201, 5645894222) and `year` = '2001'
 

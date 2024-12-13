@@ -57,7 +57,10 @@ class SchoolFacilityResource extends Resource
                         Forms\Components\FileUpload::make("images")
                             ->image()
                             ->disk('public')
-                            ->directory('Facility_photos'),
+                            ->directory('Facility_photos')
+                            ->imageCropAspectRatio('16:9')
+                            ->imageResizeTargetWidth('900')
+                            ->imageResizeTargetHeight('506.25'),
                     ])->columnSpan(4)
             ]) ->columns(12);
     }
