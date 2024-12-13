@@ -34,7 +34,9 @@ class CategoryResource extends Resource
                     ->afterStateUpdated(function($set, $state) {
                         $set('slug', Str::slug($state));
                     })
-                    ->unique(),
+                    ->unique(
+                        ignorable: fn ($record) => $record
+                    ),
                 Forms\Components\TextInput::make('slug')
                     ->required()
                     ->maxLength(2048),

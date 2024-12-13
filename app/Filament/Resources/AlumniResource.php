@@ -38,7 +38,9 @@ class AlumniResource extends Resource
                     ->label("NIS")
                     ->required()
                     ->maxLength(14)
-                    ->unique(),
+                    ->unique(
+                        ignorable: fn ($record) => $record
+                    ),
                     Grid::make(2)
                         ->schema(
                         [
@@ -71,7 +73,7 @@ class AlumniResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('id')
                     ->searchable()
-                    ->sortable(),                
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
