@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -24,6 +25,22 @@ class AlumniYear extends Model
     {
         static::deleting(function ($parent) {
             $parent->alumnis()->delete();
+        });
+
+        static::deleting(function ($alumni) {
+            if ($alumni->photo) {
+                Storage::disk('public')->delete($alumni->photo);
+            }
+        });
+
+
+        static::updating(function ($alumni) {
+            if ($alumni->isDirty('photo')) {
+                $oldphoto = $alumni->getOriginal('photo');
+                if ($oldphoto) {
+                    Storage::disk('public')->delete($oldphoto);
+                }
+            }
         });
     }
 

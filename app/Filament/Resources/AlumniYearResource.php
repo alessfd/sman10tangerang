@@ -34,12 +34,18 @@ class AlumniYearResource extends Resource
                     ->required()
                     ->minValue(2000)
                     ->maxValue(now()->format('Y'))
-                    ->unique(),
+                    ->unique(
+                        ignorable: fn ($record) => $record
+                    ),
                 Forms\Components\FileUpload::make('photo')
                     ->image()
                     ->disk('public')
                     ->imageEditor()
-                    ->directory('alumniyearthumbnail'),
+                    ->directory('alumniyearthumbnail')
+                    ->imageResizeMode('contain')
+                    ->imageCropAspectRatio('16:9')
+                    ->imageResizeTargetWidth('520')
+                    ->imageResizeTargetHeight('292.5'),
             ]);
     }
 
