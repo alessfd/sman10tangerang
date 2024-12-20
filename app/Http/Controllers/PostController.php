@@ -15,13 +15,10 @@ use App\Models\LectureProfile;
 
 class PostController extends Controller
 {
-
-
-
     public function articleapp(string $date,string $slug)
     {
         $formattedDate = date('Y-m-d', strtotime($date));
-        $post = Post::query()
+        $post = Post::with('categories')
             ->where('active', '=', 1)
             ->whereDate('published_at', '<=', date('Y-m-d'))
             ->where('slug', $slug)
@@ -44,7 +41,7 @@ class PostController extends Controller
     public function article(Request $request)
     {
         $categories = Category::all();
-        dump(now());
+        // dump(now());
         $query = Post::query()
             ->where('active', '=', 1)
             ->whereDate('published_at', '<=', now());

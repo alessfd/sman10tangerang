@@ -16,7 +16,7 @@ class CategoryPostSeeder extends Seeder
     {
         DB::table('category_post')->insert( [
             [
-                'category_id' => '1',
+                'category_id' => '3',
                 'post_id' => '1',
             ],
             [
@@ -24,7 +24,7 @@ class CategoryPostSeeder extends Seeder
                 'post_id' => '2',
             ],
             [
-                'category_id' => '3',
+                'category_id' => '4',
                 'post_id' => '3',
             ],
         ]);
