@@ -1,27 +1,37 @@
 <x-ArticleApp-Layout>
     <body class="text-justify bg-gray-50">
-
-    <div class="container mx-auto px-6 lg:px-20 py-10 flex flex-col lg:flex-row gap-10">
+        <div class="container mx-auto px-6 lg:px-20 py-10 flex flex-col lg:flex-row gap-10">
             <!-- Main Content -->
             <div class="lg:w-3/4">
-            <a href="/article">Article</a> > <a>Detail</a>
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h1 class="text-3xl font-extrabold leading-tight text-gray-900 md:text-4xl lg:text-3xl">
-                    {{ $post->title }}
-                </h1>
-                <p class="text-sm font-medium text-gray-500 mt-2">
-                    Published on: {{ $post->getFormattedDate() }}
-                </p>
+                <a href="/article">Article</a> > <a>Detail</a>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <!-- Display Categories -->
+                    @if($post->categories->isNotEmpty())
+                        <div class="mb-2">
+                            @foreach($post->categories as $category)
+                                <a href="{{ route('article', ['categories[]' => $category->id]) }}"
+                                    class="text-sm font-medium text-blue-600 hover:underline mr-2">
+                                    {{ $category->title }}
+                                </a>
+                            @endforeach
+                        </div>
+                    @endif
+                    <h1 class="text-3xl font-extrabold leading-tight text-gray-900 md:text-4xl lg:text-3xl">
+                        {{ $post->title }}
+                    </h1>
+                    <p class="text-sm font-medium text-gray-500 mt-2">
+                        Published on: {{ $post->getFormattedDate() }}
+                    </p>
 
-                @if(isset($post->thumbnail))
-                <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}"
-                    class="w-full max-h-[50vh] object-cover rounded-lg mt-6">
-                @endif
+                    @if(isset($post->thumbnail))
+                    <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}"
+                        class="w-full max-h-[50vh] object-cover rounded-lg mt-6">
+                    @endif
 
-                <div class="mt-6 text-gray-800 leading-relaxed">
-                    {!! $post->body !!}
+                    <div class="mt-6 text-gray-800 leading-relaxed">
+                        {!! $post->body !!}
+                    </div>
                 </div>
-            </div>
             </div>
 
             <!-- Sidebar -->
@@ -39,10 +49,11 @@
                                 class="w-20 h-20 object-cover rounded-lg shadow">
 
                             <!-- Article Info -->
-                            <div class="flex flex-col justify-between">
+                            <div class="flex flex-col justify-between w-full">
                                 <a href="{{ route('articleapp', ['date' => $otherArticle->published_at->format('Y-m-d'), 'slug' => $otherArticle->slug]) }}"
                                     class="text-blue-600 font-semibold hover:underline">
-                                    {{ $otherArticle->title }}
+                                    <!-- Truncated Title -->
+                                    {{ \Illuminate\Support\Str::words($otherArticle->title, 5, '...') }}
                                 </a>
                                 <p class="text-sm text-gray-500 mt-1">
                                     Published: {{ \Carbon\Carbon::parse($otherArticle->published_at)->format('M d, Y') }}
