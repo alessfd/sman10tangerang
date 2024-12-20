@@ -55,7 +55,7 @@ class SchoolProfileResource extends Resource
                 ->required(),
                 Forms\Components\TextInput::make('visi')
                 ->required()
-                ->maxLength(30),
+                ->maxLength(2040),
 
                 Forms\Components\Repeater::make("misi")
                     ->simple(
